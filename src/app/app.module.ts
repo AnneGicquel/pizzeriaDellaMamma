@@ -11,6 +11,7 @@ import { SummaryComponent } from './pages/summary/summary.component';
 import { ProductDetailsComponent } from './components/customisation/product-details/product-details.component';
 import { IngredientsIncludedComponent } from './components/customisation/ingredients-included/ingredients-included.component';
 import { IngredientsExtrasComponent } from './components/customisation/ingredients-extras/ingredients-extras.component';
+import { TagTypeComponent } from './components/tag-type/tag-type.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { IngredientsExtrasComponent } from './components/customisation/ingredien
     SummaryComponent,
     ProductDetailsComponent,
     IngredientsIncludedComponent,
-    IngredientsExtrasComponent
+    IngredientsExtrasComponent,
+    TagTypeComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
