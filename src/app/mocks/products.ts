@@ -36,7 +36,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base crème fraîche, mozzarella, poulet fumé et pommes de terre.",
     price: 900,
-    picture: "pizza-chicken.png",
+    picture: "assets/img/pizza-chicken.png",
     includedIngredients: [
       {
         ingredient: {
@@ -296,7 +296,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, mozzarella, escalope, viande hachée, merguez et poivrons.",
     price: 900,
-    picture: "pizza-orientale.png",
+    picture: "assets/img/pizza-orientale.png",
     includedIngredients: [
       {
         ingredient: {
@@ -570,7 +570,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, mozzarella, viande hachée, champignons et poulet fumé.",
     price: 950,
-    picture: "pizza-bolognaise.png",
+    picture: "assets/img/pizza-bolognaise.png",
     includedIngredients: [
       {
         ingredient: {
@@ -837,7 +837,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, mozzarella, viande hachée, champignons et poulet fumé.",
     price: 950,
-    picture: "pizza-rio.png",
+    picture: "assets/img/pizza-rio.png",
     includedIngredients: [
       {
         ingredient: {
@@ -1104,7 +1104,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base blanche, mozzarella, chèvre, Gorgonzola et Boursin.",
     price: 950,
-    picture: "pizza-quatre-fromages.png",
+    picture: "assets/img/pizza-quatre-fromages.png",
     includedIngredients: [
       {
         ingredient: {
@@ -1371,7 +1371,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, mozzarella, anchois, olives et câpres.",
     price: 850,
-    picture: "pizza-napolitaine.png",
+    picture: "assets/img/pizza-napolitaine.png",
     includedIngredients: [
       {
         ingredient: {
@@ -1638,7 +1638,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, mozzarella et olives.",
     price: 700,
-    picture: "pizza-margherita.png",
+    picture: "assets/img/pizza-margherita.png",
     includedIngredients: [
       {
         ingredient: {
@@ -1891,7 +1891,7 @@ export const PRODUCTS: IProduct[] = [
     description:
       "Base sauce tomate, Champignons, Poivrons, Pomme de terre, Oignons et Olives.",
     price: 900,
-    picture: "pizza-veggie.png",
+    picture: "assets/img/pizza-veggie.png",
     includedIngredients: [
       {
         ingredient: {
@@ -2164,7 +2164,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Coca Cola",
     description: "",
     price: 350,
-    picture: "coca-cola.png",
+    picture: "assets/img/coca-cola.png",
     includedIngredients: [],
     extras: [],
     tags: ["drink"]
@@ -2175,7 +2175,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Coca Cola Zéro",
     description: "",
     price: 350,
-    picture: "coca-cola-zero.png",
+    picture: "assets/img/coca-cola-zero.png",
     includedIngredients: [],
     extras: [],
     tags: ["drink"]
@@ -2186,7 +2186,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Limonade",
     description: "",
     price: 450,
-    picture: "limonade.png",
+    picture: "assets/img/limonade.png",
     includedIngredients: [],
     extras: [],
     tags: ["drink"]
@@ -2197,7 +2197,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Soufflé al Cioccolato",
     description: "Mi cuit au chocolat.",
     price: 690,
-    picture: "chocolat.png",
+    picture: "assets/img/chocolat.png",
     includedIngredients: [],
     extras: [],
     tags: ["dessert"]
@@ -2208,7 +2208,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Panna cotta",
     description: "Panna cotta , accompagnée d’un coulis aux fruits rouges.",
     price: 690,
-    picture: "pannacotta.png",
+    picture: "assets/img/pannacotta.png",
     includedIngredients: [],
     extras: [],
     tags: ["dessert"]
@@ -2219,7 +2219,7 @@ export const PRODUCTS: IProduct[] = [
     title: "Tiramisu",
     description: "Entremets italien à base de mascarpone, de biscuit, parfumé au café et saupoudré de cacao.",
     price: 690,
-    picture: "tiramisu.png",
+    picture: "assets/img/tiramisu.png",
     includedIngredients: [],
     extras: [],
     tags: ["dessert"]

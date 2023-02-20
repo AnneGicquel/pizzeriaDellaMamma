@@ -1,0 +1,36 @@
+main{
+    width: 759px;
+    margin: auto;
+    color: var(--darkblue);
+}
+
+img{
+    width:207px
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    grid-row-gap: 28px;
+}
+
+ul{
+    background-color: white;
+    padding: 15px 13px 11px 13px;
+}
+
+li{
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+h2{
+    font-family: 'Playfair Display', serif;
+    padding-block-end: 28px;
+    font-style: italic;
+}
+
+.padding{
+    padding: 10px 0 10px 0;
+}
