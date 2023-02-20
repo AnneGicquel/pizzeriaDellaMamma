@@ -18,8 +18,9 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
     CustomisationComponent,
     BasketComponent,
     SummaryComponent,
-    TagTypeComponent
-  ],
+    TagTypeComponent,
+    SummaryComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule
