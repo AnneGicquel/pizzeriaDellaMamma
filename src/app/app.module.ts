@@ -8,6 +8,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CustomisationComponent } from './pages/customisation/customisation.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { SummaryComponent } from './pages/summary/summary.component';
+import { TagTypeComponent } from './components/tag-type/tag-type.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { SummaryComponent } from './pages/summary/summary.component';
     CategoryComponent,
     CustomisationComponent,
     BasketComponent,
+    SummaryComponent,
+    TagTypeComponent
     SummaryComponent
   ],
   imports: [
