@@ -21,6 +21,8 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
     CustomisationComponent,
     BasketComponent,
     SummaryComponent,
+    TagTypeComponent,
+    SummaryComponent,
     ProductDetailsComponent,
     IngredientsIncludedComponent,
     IngredientsExtrasComponent,
