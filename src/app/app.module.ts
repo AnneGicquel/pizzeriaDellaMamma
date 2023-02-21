@@ -14,6 +14,8 @@ import { IngredientsExtrasComponent } from './components/customisation/ingredien
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+
 
 @NgModule({
   declarations: [
@@ -28,8 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TagTypeComponent,
     SummaryComponent,
     TableNumberFormComponent,
-    
-   
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
