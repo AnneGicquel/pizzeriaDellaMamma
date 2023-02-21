@@ -16,11 +16,7 @@ import { TableNumberFormComponent } from './components/table-number-form/table-n
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
-// pour buttons 
-import {FormsModule} from '@angular/forms';
-import {SelectButtonModule} from 'primeng/selectbutton';
-import {ButtonModule} from 'primeng/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -42,12 +38,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    // pour buttons
-    ButtonModule,
-    SelectButtonModule,
-    FormsModule,
-    BrowserAnimationsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
