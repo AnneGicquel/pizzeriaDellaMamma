@@ -8,6 +8,11 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CustomisationComponent } from './pages/customisation/customisation.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { SummaryComponent } from './pages/summary/summary.component';
+import { ProductDetailsComponent } from './components/customisation/product-details/product-details.component';
+import { IngredientsIncludedComponent } from './components/customisation/ingredients-included/ingredients-included.component';
+import { IngredientsExtrasComponent } from './components/customisation/ingredients-extras/ingredients-extras.component';
+import { TagTypeComponent } from './components/tag-type/tag-type.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { SummaryComponent } from './pages/summary/summary.component';
     CategoryComponent,
     CustomisationComponent,
     BasketComponent,
-    SummaryComponent
+    SummaryComponent,
+    ProductDetailsComponent,
+    IngredientsIncludedComponent,
+    IngredientsExtrasComponent,
+    TagTypeComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
