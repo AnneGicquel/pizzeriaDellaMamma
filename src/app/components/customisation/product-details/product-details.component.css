@@ -1,0 +1,50 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+img {
+    width: 371px;
+    height: 371px;
+}
+
+button {
+    font-family: var(--inter);
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: var(--darkblue);
+    border-radius: 10px;
+    padding: 24px 0;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.div-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.description {
+    color: black;
+    font-size: 16px;
+}
+

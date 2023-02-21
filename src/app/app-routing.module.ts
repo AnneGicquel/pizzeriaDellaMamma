@@ -16,7 +16,7 @@ const routes: Routes = [
     component: CategoryComponent
   },
   {
-    path: "customisation",
+    path: "customisation/:id",
     component: CustomisationComponent
   },
   {
