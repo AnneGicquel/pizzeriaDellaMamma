@@ -23,12 +23,10 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     BasketComponent,
     SummaryComponent,
     TagTypeComponent,
-    SummaryComponent,
     ProductDetailsComponent,
     IngredientsIncludedComponent,
     IngredientsExtrasComponent,
     TagTypeComponent,
-    SummaryComponent,
     ProductCardComponent,
   ],
   imports: [
