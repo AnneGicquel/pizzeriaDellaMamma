@@ -1,4 +1,5 @@
-<div class="bordure">
+<!-- A RETIRER !! -->
+<!-- <div class="bordure"> -->
 
 <h1 class="benvenuto">Benvenuto !</h1>
 
@@ -9,13 +10,15 @@
 <form [formGroup]="tableForm">
     <!--attribuer un formControlName qui correspond à la clé de tableForm -->
     
-    <input type="text" placeholder="Exemple : 42"  class="entry-field" formControlName="table_number">
+    <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
+    <input type="text" placeholder="Exemple : 42"  class="entry-field" 
+        formControlName="table_number" [class.ifError]="validationError.includes('table_number')">
     <div class="form-control-feedback">
-        Numéro de table incorrecte.
+        <!-- Numéro de table incorrecte. -->
     </div>
     <button type="submit" (click)="accessToMenu()">C’est parti !</button>
 </form>
-</div>
+<!-- </div> -->
 
 
 <!-- <div class="form-control-feedback"

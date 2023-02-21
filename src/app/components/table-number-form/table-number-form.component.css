@@ -1,5 +1,5 @@
-.bordure{
-    border: solid 3px red;
+.ifError{
+    border-color: red;
 }
 .benvenuto{
     position: absolute;
