@@ -34,3 +34,10 @@ h2{
 .padding{
     padding: 10px 0 10px 0;
 }
+
+.font{
+    font-family: 'Playfair Display', serif;
+    font-weight:700;
+
+    
+}
