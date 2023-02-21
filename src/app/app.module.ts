@@ -22,12 +22,11 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     CustomisationComponent,
     BasketComponent,
     SummaryComponent,
-    TagTypeComponent,
     ProductDetailsComponent,
     IngredientsIncludedComponent,
     IngredientsExtrasComponent,
     TagTypeComponent,
-    ProductCardComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
