@@ -47,7 +47,15 @@ export class ProductDetailsComponent {
     this.customService.unselectIncludedIngredient(index);
   }
 
-  
+  // Ajout extra
+  addOneExtra(index: number) {
+    this.customService.addOneExtra(index);
+  }
+
+  // Retire extra
+  removeOneExtra(index: number) {
+    this.customService.removeOneExtra(index);
+  }
   
   // Fonction pour ajouter au panier
   addToBasket() {

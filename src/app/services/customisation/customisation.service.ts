@@ -60,11 +60,12 @@ export class CustomisationService {
     let quantity = this.customProduct.extras[indexIngredient].quantity;
     let extraPrice = this.customProduct.extras[indexIngredient].additionalPrice;
 
+    if(quantity > 0) {
     // Retire 1
     this.customProduct.extras[indexIngredient].quantity --
     // Retire le prix de l'extra
     this.customProduct.price = this.customProduct?.price - extraPrice;
-  
+    }
 
   }
 

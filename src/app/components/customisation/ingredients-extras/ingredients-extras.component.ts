@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/mocks/products';
 import { CustomisationService } from 'src/app/services/customisation/customisation.service';
 
@@ -10,17 +10,19 @@ import { CustomisationService } from 'src/app/services/customisation/customisati
 export class IngredientsExtrasComponent {
 
   @Input() product!: IProduct;
+  @Output() addOne = new EventEmitter();
+  @Output() removeOne = new EventEmitter();
 
   constructor(
     private customService: CustomisationService
   ) { }
 
-  addOneExtra() {
-    this.customService.addOneExtra(0);
+  addOneExtra(input: number) {
+    this.addOne.emit(input);
   }
 
-  removeOneExtra() {
-    this.customService.removeOneExtra(0);
+  removeOneExtra(input: number) {
+    this.removeOne.emit(input);
   }
 
 }
