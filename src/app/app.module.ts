@@ -9,6 +9,8 @@ import { CustomisationComponent } from './pages/customisation/customisation.comp
 import { BasketComponent } from './pages/basket/basket.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
+import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
     CustomisationComponent,
     BasketComponent,
     SummaryComponent,
-    TagTypeComponent
-    SummaryComponent
+    TagTypeComponent,
+    SummaryComponent,
+    TableNumberFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

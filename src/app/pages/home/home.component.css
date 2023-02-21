@@ -1,0 +1,5 @@
+.homepage{
+    /* faire le positionnement */
+    display: flex;
+    justify-content: center;
+}
