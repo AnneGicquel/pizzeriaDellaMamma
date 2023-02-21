@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/mocks/products';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 import { CustomisationService } from 'src/app/services/customisation/customisation.service';
@@ -14,11 +14,11 @@ export class ProductDetailsComponent {
 
   product?: IProduct ;
   productsList: IProduct[] = [];
+  customPrice?: number;
 
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private route: Router,
     private basketService: BasketServiceService,
     private customService: CustomisationService
   ) { }
@@ -26,6 +26,7 @@ export class ProductDetailsComponent {
   ngOnInit() {
     this.productsList = this.getProducts();
     this.getCustomProduct();
+    this.customPrice = this.product?.price;
   }
 
   // Récupère la liste des produits
@@ -50,11 +51,13 @@ export class ProductDetailsComponent {
   // Ajout extra
   addOneExtra(index: number) {
     this.customService.addOneExtra(index);
+    this.customPrice = this.customService.getCustomPrice();
   }
 
   // Retire extra
   removeOneExtra(index: number) {
     this.customService.removeOneExtra(index);
+    this.customPrice = this.customService.getCustomPrice();
   }
   
   // Fonction pour ajouter au panier
