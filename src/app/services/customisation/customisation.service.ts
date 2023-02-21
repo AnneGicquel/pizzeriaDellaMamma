@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 export class CustomisationService {
 
   customProduct?: IProduct;
+  customPrice?: number = this.customProduct?.price;
 
   constructor(private productService: ProductService) { }
 
@@ -45,8 +46,7 @@ export class CustomisationService {
     if(quantity < maxQuantity) {
       // Ajoute 1
       this.customProduct.extras[indexIngredient].quantity ++
-      // Rajoute le prix de l'extra
-      this.customProduct.price = this.customProduct?.price + extraPrice;
+
     }
 
   }
@@ -63,11 +63,32 @@ export class CustomisationService {
     if(quantity > 0) {
     // Retire 1
     this.customProduct.extras[indexIngredient].quantity --
-    // Retire le prix de l'extra
-    this.customProduct.price = this.customProduct?.price - extraPrice;
+
     }
 
   }
+
+  getCustomPrice() {
+
+    let additionnalPrice: number = 0;
+    this.customPrice = this.customProduct?.price;
+
+    if(!this.customProduct) return
+
+    for(let i = 0 ; i < this.customProduct!.extras.length ; i++) {
+
+      if(this.customProduct.extras[i].quantity > 0) {
+
+        additionnalPrice = this.customProduct?.extras[i].additionalPrice;
+        this.customPrice = this.customPrice! + additionnalPrice;
+        
+      }
+      
+    }
+
+    return this.customPrice
+  }
+
 
 
 }
