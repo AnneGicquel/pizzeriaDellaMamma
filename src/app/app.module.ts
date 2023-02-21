@@ -16,6 +16,11 @@ import { TableNumberFormComponent } from './components/table-number-form/table-n
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
+// pour buttons 
+import {FormsModule} from '@angular/forms';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {ButtonModule} from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -31,11 +36,16 @@ import { BasketProductCardComponent } from './components/basket/basket-product-c
     SummaryComponent,
     TableNumberFormComponent,
     ProductCardComponent,
-    BasketProductCardComponent
+    BasketProductCardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
+    ReactiveFormsModule,
+    SelectButtonModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
