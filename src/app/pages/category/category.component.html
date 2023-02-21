@@ -2,29 +2,23 @@
     <!-- boutton filtre (tag-type) -->
     <app-tag-type></app-tag-type>
 
+   <!--  " -->
     <h2>Les Pizzas della Mamma</h2>
     <!-- lists de produits (pizza) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
-            <ul *ngIf="product.category === 'pizza'">
-                <li><img src={{product.picture}} /></li>
-                <li class="padding font">{{product.title}}</li>
-                <li class="padding">{{product.price}}</li>
-            </ul>
+            <app-product-card *ngIf="product.category === 'pizza'" [product]= "product"></app-product-card>
         </ng-container>
     </div>
     <br>
     <br>
 
+
     <h2>Les Desserts della Mamma</h2>
     <!-- lists de produits (dessert) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
-            <ul *ngIf="product.category === 'dessert'">
-                <li><img src={{product.picture}} /></li>
-                <li class="padding font">{{product.title}}</li>
-                <li class="padding">{{product.price}}</li>
-            </ul>
+            <app-product-card *ngIf="product.category === 'dessert'" [product]= "product"></app-product-card>
         </ng-container>
     </div>
 <br>
@@ -34,13 +28,8 @@
     <!-- lists de produits (boisson) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
-            <ul *ngIf="product.category === 'drink'">
-                <img src={{product.picture}} />
-                <li class="padding font">{{product.title}}</li>
-                <li class="padding">{{product.price}}</li>
-            </ul>
+            <app-product-card *ngIf="product.category ==='drink'" [product]="product"></app-product-card>
         </ng-container>
     </div>
 </main>
 
-<!-- [class.visible]="product.category" -->

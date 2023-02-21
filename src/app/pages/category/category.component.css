@@ -4,9 +4,6 @@ main{
     color: var(--darkblue);
 }
 
-img{
-    width:207px
-}
 
 .grid{
     display: grid;
@@ -15,15 +12,6 @@ img{
     grid-row-gap: 28px;
 }
 
-ul{
-    background-color: white;
-    padding: 15px 13px 11px 13px;
-}
-
-li{
-    margin: auto;
-    font-family: 'Inter', sans-serif;
-}
 
 h2{
     font-family: 'Playfair Display', serif;
@@ -31,13 +19,3 @@ h2{
     font-style: italic;
 }
 
-.padding{
-    padding: 10px 0 10px 0;
-}
-
-.font{
-    font-family: 'Playfair Display', serif;
-    font-weight:700;
-
-    
-}
