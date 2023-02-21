@@ -21,7 +21,7 @@
     <div class="grid">
         <ng-container *ngFor="let product of products">
             <ul *ngIf="product.category === 'dessert'">
-                <img src={{product.picture}} />
+                <li><img src={{product.picture}} /></li>
                 <li class="padding font">{{product.title}}</li>
                 <li class="padding">{{product.price}}</li>
             </ul>
