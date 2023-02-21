@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct, PRODUCTS } from 'src/app/mocks/products';
+import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 
 @Component({
   selector: 'app-basket-product-card',
@@ -8,9 +8,24 @@ import { IProduct, PRODUCTS } from 'src/app/mocks/products';
 })
 export class BasketProductCardComponent {
 
-// Je recupère la liste des produits du mock
-listOfProducts : IProduct[] = PRODUCTS;
-product?: IProduct;
+// Je récupère mon panier
+basket: IBasketProduct[] = [];
+
+constructor (private basketService : BasketServiceService) {};
+
+ngOnInit() {
+  this.getBasket();
+}
+
+getBasket() {
+  this.basket = this.basketService.getBasket();
+}
+
+removeProduct(index:number) {
+  this.basketService.removeProduct(index);
+  this.getBasket();
+
+}
 
 
 
