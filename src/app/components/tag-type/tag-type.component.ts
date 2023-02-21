@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct, PRODUCTS } from 'src/app/mocks/products';
 
 @Component({
   selector: 'app-tag-type',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./tag-type.component.css']
 })
 export class TagTypeComponent {
-  buttonIndex=0;
-  onClick(index:any){
-    this.buttonIndex = index
+  // buttonIndex=0;
+  // onClick(index:any){
+  //   this.buttonIndex = index
+  //   console.log("toggle fonctionne");
+  product:IProduct[]=PRODUCTS;
 
-    console.log("toggle fonctionne");
   }
-}
+

@@ -13,6 +13,11 @@ import { IngredientsIncludedComponent } from './components/customisation/ingredi
 import { IngredientsExtrasComponent } from './components/customisation/ingredients-extras/ingredients-extras.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import {FormsModule} from '@angular/forms';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {ButtonModule} from 'primeng/button';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
