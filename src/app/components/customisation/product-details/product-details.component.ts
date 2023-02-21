@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from 'src/app/mocks/products';
+import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 import { ProductService } from 'src/app/services/products/product.service';
 
 @Component({
@@ -10,13 +11,14 @@ import { ProductService } from 'src/app/services/products/product.service';
 })
 export class ProductDetailsComponent {
 
-  product?: IProduct;
+  product?: IProduct ;
   productsList: IProduct[] = [];
 
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
     private route: Router,
+    private basketService: BasketServiceService
   ) { }
 
   ngOnInit() {
@@ -42,5 +44,18 @@ export class ProductDetailsComponent {
     // On le retourne
     return this.product;
 
+  }
+
+
+  // Ajout Cynthia
+  //Fonction pour ajouter au panier
+  addToBasket() {
+    if(!this.product) {
+      return 
+    }
+    const basketProduct: IBasketProduct = {
+      product: this.product
+    }
+    this.basketService.addToBasket(basketProduct);
   }
 }
