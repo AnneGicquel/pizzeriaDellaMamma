@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct } from 'src/app/mocks/products';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { BasketServiceService, IBasketProduct } from 'src/app/services/basketSer
 export class BasketComponent {
 
   basket : IBasketProduct[] = [];
+  
 
   constructor (public basketservice: BasketServiceService) {}
 

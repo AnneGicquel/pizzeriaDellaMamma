@@ -15,6 +15,7 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     TagTypeComponent,
     SummaryComponent,
     TableNumberFormComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    BasketProductCardComponent
   ],
   imports: [
     BrowserModule,
