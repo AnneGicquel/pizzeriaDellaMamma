@@ -57,5 +57,13 @@ a {
     margin: 0 80px 10px 80px;
     text-decoration: underline;
     cursor: pointer;
-    color :#092947;   
+    color :#092947; 
+    text-align:start; 
+}
+.reset {
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+    text-align:end;
+    margin: 0 80px 10px 80px;
 }

@@ -88,4 +88,9 @@ this.saveBasket(basket);
 
 }
 
+resetBasket() {
+  const basket = this.getBasket();
+  basket.length = 0;
+}
+
 }

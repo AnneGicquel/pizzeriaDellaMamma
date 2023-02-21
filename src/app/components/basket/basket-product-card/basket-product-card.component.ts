@@ -26,7 +26,9 @@ removeProduct(index:number) {
   this.getBasket();
 
 }
-
+resetBasket() {
+  this.basketService.resetBasket();
+}
 
 
 

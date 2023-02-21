@@ -1,6 +1,7 @@
 <main>
 
     <a class="retour" routerLink="/category" >Retour aux produits</a>
+    <button class="reset" (click)="resetBasket()">Vider le panier</button>
 
     <ul class="flex column">
         <li *ngFor="let IBasketProduct of basket; let index = index">
