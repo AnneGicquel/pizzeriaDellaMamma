@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-number-form',
@@ -12,10 +13,10 @@ export class TableNumberFormComponent {
   tableForm!:FormGroup
 
   // tableau pour recueillir les erreurs de saisie 
-  validationError:[]=[];
+  validationError: string[]=[];
 
   // injecter dans le constructeur formBuilder
-  constructor(private formBuilder : FormBuilder){
+  constructor(private formBuilder : FormBuilder, private router: Router ){
 
   }
 
@@ -31,29 +32,59 @@ export class TableNumberFormComponent {
     })
 
   }
-   accessToMenu(){
-    // test
-    console.log(this.tableForm.value)
+  
+//   accessToMenu(){
+//     // // test
+//     // console.log(this.tableForm.value)}
 
-    
-    // // réinitialiser le tableau d'erreur
-    //  if (this.tableForm.invalid){
-    // // boucler sur l'objet <---------------------------------------------------------
-    //     Object.keys(this.tableForm.controls).forEach((control)=>(input => {
-    //       const inputObject = this.tableForm.get(input);
-    //       if (inputObject && inputObject.errors){
-    //         this.validationError.push(input);
-    //       }
-        
-    //   })
-    // }else{
-    //         // this.router.navigate([/])
-    //         console.log('test')
+//     // réinitialiser le tableau d'erreur
+//     this.validationError = [];
 
-    //   }
+//     if (this.tableForm.invalid) { 
+//       // Si le formulaire est invalide
+//       Object.keys(this.tableForm.controls).forEach((inputValue) => {
+//         const currentInput = this.tableForm.get(inputValue);
+//         console.log(inputValue)
+
+//         if (currentInput && currentInput.status === "INVALID") {
+//            this.validationError.push(inputValue);
+//         }
+//         // renseigner une erreur de saisie---> doit afficher: "Numéro de table incorrecte."
+//       })
+//     } else {
+//       console.log("please !!!!")
+//       // ----> redirige vers la pages/category
+//       this.router.navigate(['/category']);
+//       // navbar apparaît
+//       // table (numéro input) sur bouton
+//       // ----> transforme le h1 en: 'Table (numéro input)
+//       // ----> transforme le label: 'Modifier mon numéro de table'
+//       // ----> transforme le bouton: 'Modifier'
+//     }
+//   }   
+// }
+
+
+//  COMMENTER ET REFAIRE LA FIN DE LA METHODE
+accessToMenu() {
+  // réinitialiser le tableau d'erreur
+  this.validationError = [];
+
+  if (this.tableForm.invalid) {
+    // Si le formulaire est invalide
+    const invalidControls = Object.keys(this.tableForm.controls).filter(inputValue => {
+      const currentInput = this.tableForm.get(inputValue);
+      return currentInput && currentInput.status === "INVALID";
+    });
+    this.validationError = invalidControls;
+  } else {
+    console.log("please !!!!")
   }
 }
-  
+}
+
+    
+ 
 
     
   
