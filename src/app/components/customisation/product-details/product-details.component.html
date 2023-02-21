@@ -1,3 +1,10 @@
-<p>product-details works!</p>
-<app-ingredients-extras></app-ingredients-extras>
-<app-ingredients-included></app-ingredients-included>
+<section>
+    <img src="{{product?.picture}}" alt="photo du produit">
+    <div class="div-right">
+        <h1>{{product?.title}}</h1>
+        <p class="price">{{product?.price}}</p>
+        <p class="description">{{product?.description}}</p>
+        <app-ingredients-extras></app-ingredients-extras>
+        <app-ingredients-included></app-ingredients-included>
+    </div>
+    </section>
