@@ -2,6 +2,7 @@
     <ul>
         <li><img src={{product.picture}} /></li>
         <li class="padding font">{{product.title}}</li>
-        <li class="padding">{{product.price}}</li>
+        <li class="padding">{{product.price| number :'0.0-3'}} €</li>
+        <!-- verifier pipe number one digit -->
     </ul>
 </a>

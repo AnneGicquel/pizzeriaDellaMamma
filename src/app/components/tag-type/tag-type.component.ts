@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IProduct, ProductCategoryType, PRODUCTS, TagType } from 'src/app/mocks/products';
 
 @Component({
   selector: 'app-tag-type',
@@ -6,10 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./tag-type.component.css']
 })
 export class TagTypeComponent {
-  buttonIndex=0;
-  onClick(index:any){
-    this.buttonIndex = index
+  product:IProduct[]=PRODUCTS;
+  // opt : TagType[];
 
-    console.log("toggle fonctionne");
+  filteredProducts=[];
+
+
+  // buttonIndex=0;
+  // onClick(index:any){
+  //   this.buttonIndex = index
+  //   console.log("toggle fonctionne");
+  // options : TagType;
+  
+
+
+
+  filter(data: number[]){
+    if (data.length === 0) {
+      // this.filteredProducts = this.Tag;
+      return;
   }
+
+  }
+
 }
