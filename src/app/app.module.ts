@@ -12,7 +12,10 @@ import { ProductDetailsComponent } from './components/customisation/product-deta
 import { IngredientsIncludedComponent } from './components/customisation/ingredients-included/ingredients-included.component';
 import { IngredientsExtrasComponent } from './components/customisation/ingredients-extras/ingredients-extras.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
+import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+
 
 @NgModule({
   declarations: [
@@ -21,16 +24,18 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     CategoryComponent,
     CustomisationComponent,
     BasketComponent,
-    SummaryComponent,
     ProductDetailsComponent,
     IngredientsIncludedComponent,
     IngredientsExtrasComponent,
     TagTypeComponent,
+    SummaryComponent,
+    TableNumberFormComponent,
     ProductCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
