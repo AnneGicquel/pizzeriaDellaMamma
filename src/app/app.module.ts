@@ -15,9 +15,6 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import {FormsModule} from '@angular/forms';
-import {SelectButtonModule} from 'primeng/selectbutton';
-import {ButtonModule} from 'primeng/button';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 
 
@@ -40,9 +37,7 @@ import { BasketProductCardComponent } from './components/basket/basket-product-c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule,
     ReactiveFormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
