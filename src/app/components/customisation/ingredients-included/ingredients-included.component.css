@@ -23,3 +23,8 @@ hr:last-of-type {
     /* Ne pas afficher la dernière ligne horizontale */
     display: none;
 }
+
+input {
+    width: 23px;
+    height: 23px;
+}
