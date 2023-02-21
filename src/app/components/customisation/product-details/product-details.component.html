@@ -6,6 +6,6 @@
         <p class="description">{{product?.description}}</p>
         <app-ingredients-included *ngIf="product && product.includedIngredients.length !== 0" [product]="product"></app-ingredients-included>
         <app-ingredients-extras *ngIf="product && product.includedIngredients.length !== 0" [product]="product"></app-ingredients-extras>
-        <button>Ajouter au panier · [prix]</button>
+        <button (click)="addToBasket()" routerLink="/basket">Ajouter au panier · [prix]</button>
     </div>
 </section>
