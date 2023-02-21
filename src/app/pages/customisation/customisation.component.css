@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 759px;
+    margin: auto;
+    color: var(--darkblue);
+    font-family: var(--inter);
+    gap: 50px;
+}
+
+a {
+    text-decoration: underline;
+}
