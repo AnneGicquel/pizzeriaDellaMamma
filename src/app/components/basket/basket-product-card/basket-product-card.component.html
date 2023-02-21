@@ -1,5 +1,7 @@
 <main>
 
+    <a class="retour" routerLink="/category" >Retour aux produits</a>
+
     <ul class="flex column">
         <li *ngFor="let IBasketProduct of basket; let index = index">
             <article class="flex">
@@ -23,7 +25,8 @@
         </li>
     </ul>
 
-    <p class="total"><b>Total</b>: XX €</p>
+    <p class="total"><b>Total</b>:  €</p>
     <button class="envoyer">Table XX : Envoyer la commande en cuisine</button>
+    <a routerlink="/">Votre table n'est pas la XX ?</a>
 
 </main>

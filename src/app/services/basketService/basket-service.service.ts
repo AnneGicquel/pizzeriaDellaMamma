@@ -75,6 +75,7 @@ getBasketTotalPrice() : void {
     },0);
     // je donne le prix total au panier
     this.basketTotalPrice = totalPrice;
+    console.log("Prix Total", totalPrice);
 }
 
 // Fonction pour supprimer un produit

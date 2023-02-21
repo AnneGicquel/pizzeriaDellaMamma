@@ -42,7 +42,20 @@ main {
     cursor: pointer;
     margin: 20px 80px 10px 80px;
 }
-.total {
+.total{
     margin: 20px 80px 10px 80px;
+    
+}
+a {
     text-align: end;
+    margin: 0 80px 10px 80px;
+    text-decoration: underline;
+    cursor: pointer;
+    color :#092947;
+}
+.retour {
+    margin: 0 80px 10px 80px;
+    text-decoration: underline;
+    cursor: pointer;
+    color :#092947;   
 }
