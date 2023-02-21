@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IProduct } from 'src/app/mocks/products';
 
 @Component({
   selector: 'app-ingredients-extras',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./ingredients-extras.component.css']
 })
 export class IngredientsExtrasComponent {
+
+  @Input() product!: IProduct;
 
 }

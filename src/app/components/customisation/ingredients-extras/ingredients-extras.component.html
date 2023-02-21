@@ -1,3 +1,10 @@
 <h2>Extras</h2>
 
-<p>Liste des ingrédients</p>
+<ng-container *ngFor="let ingredients of product.extras">
+    <div>
+        <p class="ingredient-title">{{ingredients.ingredient.title}}</p>
+        <p class="ingredient-price">{{ingredients.additionalPrice}}</p>
+        
+        <hr>
+    </div>
+</ng-container>
