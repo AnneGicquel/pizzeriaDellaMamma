@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./tag-type.component.css']
 })
 export class TagTypeComponent {
+  buttonIndex=0;
+  onClick(index:any){
+    this.buttonIndex = index
 
+    console.log("toggle fonctionne");
+  }
 }

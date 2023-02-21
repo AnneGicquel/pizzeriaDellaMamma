@@ -1,3 +1,30 @@
 main{
     display: flex;
+    padding: 64px 0 38px 0;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    gap: 16px;
+
+
+}
+
+button{
+    /* border: 1px solid red; */
+    padding: 6px 16px 6px 16px;
+    border-radius: 50px;
+    background-color: white;
+    
+}
+
+
+/* toggle */
+main button:hover {
+    color: white;
+    background-color: var(--darkblue);
+}
+
+main button:active{
+    color: white;
+    background-color: var(--darkblue);
+
 }

@@ -1,11 +1,46 @@
-<!-- boutton filtre (tag-type) -->
-<app-tag-type></app-tag-type>
+<main>
+    <!-- boutton filtre (tag-type) -->
+    <app-tag-type></app-tag-type>
 
-<!-- lists de produits -->
+    <h2>Les Pizzas della Mamma</h2>
+    <!-- lists de produits (pizza) -->
+    <div class="grid">
+        <ng-container *ngFor="let product of products">
+            <ul *ngIf="product.category === 'pizza'">
+                <li><img src={{product.picture}} /></li>
+                <li class="padding font">{{product.title}}</li>
+                <li class="padding">{{product.price}}</li>
+            </ul>
+        </ng-container>
+    </div>
+    <br>
+    <br>
 
-<section class="pizzas"></section>
+    <h2>Les Desserts della Mamma</h2>
+    <!-- lists de produits (dessert) -->
+    <div class="grid">
+        <ng-container *ngFor="let product of products">
+            <ul *ngIf="product.category === 'dessert'">
+                <img src={{product.picture}} />
+                <li class="padding font">{{product.title}}</li>
+                <li class="padding">{{product.price}}</li>
+            </ul>
+        </ng-container>
+    </div>
+<br>
+<br>
 
-<section class="dessert"></section>
+<h2>Les Boissons della Mamma</h2>
+    <!-- lists de produits (boisson) -->
+    <div class="grid">
+        <ng-container *ngFor="let product of products">
+            <ul *ngIf="product.category === 'drink'">
+                <img src={{product.picture}} />
+                <li class="padding font">{{product.title}}</li>
+                <li class="padding">{{product.price}}</li>
+            </ul>
+        </ng-container>
+    </div>
+</main>
 
-<section class="boissons"></section>
-<p>category works!</p>
+<!-- [class.visible]="product.category" -->
