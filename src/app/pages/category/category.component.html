@@ -8,7 +8,7 @@
         <ng-container *ngFor="let product of products">
             <ul *ngIf="product.category === 'pizza'">
                 <li><img src={{product.picture}} /></li>
-                <li class="padding">{{product.title}}</li>
+                <li class="padding font">{{product.title}}</li>
                 <li class="padding">{{product.price}}</li>
             </ul>
         </ng-container>
@@ -22,7 +22,7 @@
         <ng-container *ngFor="let product of products">
             <ul *ngIf="product.category === 'dessert'">
                 <img src={{product.picture}} />
-                <li class="padding">{{product.title}}</li>
+                <li class="padding font">{{product.title}}</li>
                 <li class="padding">{{product.price}}</li>
             </ul>
         </ng-container>
@@ -36,7 +36,7 @@
         <ng-container *ngFor="let product of products">
             <ul *ngIf="product.category === 'drink'">
                 <img src={{product.picture}} />
-                <li class="padding">{{product.title}}</li>
+                <li class="padding font">{{product.title}}</li>
                 <li class="padding">{{product.price}}</li>
             </ul>
         </ng-container>
