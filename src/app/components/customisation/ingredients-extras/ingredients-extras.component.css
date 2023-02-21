@@ -1,4 +1,54 @@
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
+    margin: 30px 0 40px;
+}
+
+hr {
+    margin-bottom: 15px;
+}
+
+hr:last-of-type {
+    /* Ne pas afficher la dernière ligne horizontale */
+    display: none;
+}
+
+button {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--whitecloud);
+    background-color: var(--darkblue);
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+.ingredient-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.ingredient-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.ingredient-price {
+    font-size: 14px;
+}
+
+.ingredient-quantity-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.svg-plus, .svg-minus {
+    fill: white;
+    enable-background:new 0 0 512 512;
+    width: 16px;
 }
