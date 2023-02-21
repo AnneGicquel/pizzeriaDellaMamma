@@ -1,9 +1,9 @@
 <h2>Ingrédients inclus</h2>
 
-<ng-container *ngFor="let ingredients of product.includedIngredients">
+<ng-container *ngFor="let ingredients of product.includedIngredients; index as i">
     <div>
         <p>{{ingredients.ingredient.title}}</p>
-        <input type="checkbox" name="included-ingredients" id="included-ingredients" checked>
+        <input (click)="toggleIncludedIngredient(i)" type="checkbox" name="included-ingredients" id="included-ingredients" checked>
     </div>
     <hr>
 </ng-container>

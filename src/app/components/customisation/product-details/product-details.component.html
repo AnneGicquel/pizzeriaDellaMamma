@@ -4,7 +4,7 @@
         <h1>{{product?.title}}</h1>
         <p class="price">{{product?.price}}</p>
         <p class="description">{{product?.description}}</p>
-        <app-ingredients-included *ngIf="product && product.includedIngredients.length !== 0" [product]="product"></app-ingredients-included>
+        <app-ingredients-included (toggle)="toggleIncludedIngredient($event)" *ngIf="product && product.includedIngredients.length !== 0" [product]="product"></app-ingredients-included>
         <app-ingredients-extras *ngIf="product && product.includedIngredients.length !== 0" [product]="product"></app-ingredients-extras>
         <button (click)="addToBasket()" routerLink="/basket">Ajouter au panier · [prix]</button>
     </div>
