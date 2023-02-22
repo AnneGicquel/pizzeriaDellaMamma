@@ -1,35 +1,31 @@
 <main>
-    <!-- boutton filtre (tag-type) -->
-    <!-- <app-tag-type></app-tag-type> -->
+    <app-tag-type></app-tag-type>
 
-   <!--  " -->
     <h2>Les Pizzas della Mamma</h2>
-    <!-- lists de produits (pizza) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
             <app-product-card *ngIf="product.category === 'pizza'" [product]= "product"></app-product-card>
         </ng-container>
+        <br>
+        <br>    
     </div>
-    <br>
-    <br>
 
 
     <h2>Les Desserts della Mamma</h2>
-    <!-- lists de produits (dessert) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
             <app-product-card *ngIf="product.category === 'dessert'" [product]= "product"></app-product-card>
         </ng-container>
+        <br>
+        <br>
     </div>
-<br>
-<br>
 
 <h2>Les Boissons della Mamma</h2>
-    <!-- lists de produits (boisson) -->
     <div class="grid">
         <ng-container *ngFor="let product of products">
             <app-product-card *ngIf="product.category ==='drink'" [product]="product"></app-product-card>
         </ng-container>
     </div>
 </main>
+
 

@@ -15,4 +15,6 @@ export class ProductService {
   getProduct(id: number) : IProduct | undefined {
     return PRODUCTS.find(product => product.id === id);
   }
+
 }
+
