@@ -45,3 +45,7 @@ h2{
     text-align:end;
     margin: 0 80px 10px 80px;
 }
+.total{
+    margin: 20px 80px 10px 80px;
+    text-align: end;
+}
