@@ -35,7 +35,8 @@ import { BasketProductCardComponent } from './components/basket/basket-product-c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

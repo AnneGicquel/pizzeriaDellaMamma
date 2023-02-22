@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-number-form',
@@ -12,10 +13,10 @@ export class TableNumberFormComponent {
   tableForm!:FormGroup
 
   // tableau pour recueillir les erreurs de saisie 
-  validationError:[]=[];
+  validationError: string[]=[];
 
   // injecter dans le constructeur formBuilder
-  constructor(private formBuilder : FormBuilder){
+  constructor(private formBuilder : FormBuilder, private router: Router ){
 
   }
 
@@ -31,31 +32,39 @@ export class TableNumberFormComponent {
     })
 
   }
-   accessToMenu(){
-    // test
-    console.log(this.tableForm.value)
-
-    
-    // // réinitialiser le tableau d'erreur
-    //  if (this.tableForm.invalid){
-    // // boucler sur l'objet <---------------------------------------------------------
-    //     Object.keys(this.tableForm.controls).forEach((control)=>(input => {
-    //       const inputObject = this.tableForm.get(input);
-    //       if (inputObject && inputObject.errors){
-    //         this.validationError.push(input);
-    //       }
-        
-    //   })
-    // }else{
-    //         // this.router.navigate([/])
-    //         console.log('test')
-
-    //   }
-  }
-}
   
 
-    
+
+  // méthode qui vérifie si le formulaire est valide ou non
+  accessToMenu() {
+    // réinitialiser le tableau d'erreur
+    this.validationError = [];
+
+    // if true
+    if (this.tableForm.invalid) {
+      // Si le formulaire est invalide
+      // Object.keys() récupére noms des contrôles du formulaire 
+      // filter() pour ne garder que contrôles invalides (en se basant sur la propriété status de chaque contrôle)
+      // stocke les noms des contrôles invalides dans invalidControls.
+      const invalidControls = Object.keys(this.tableForm.controls).filter(inputValue => {
+        // récupère la saisie
+        const currentInput = this.tableForm.get(inputValue);
+        // console.log(control,currentInput);
+        // status: INVALID vient du détail du control (ds console js)
+        // si il y a un objet et que son status est invalid
+        // if (currentInput && currentInput.status === "INVALID");
+        return currentInput && currentInput.status === "INVALID";
+      });
+      // affecter invalidControls à la propriété validationError.
+      this.validationError = invalidControls;
+    } else {
+      // si valide, redirige vers la page category
+      this.router.navigate(['/category']);
+    }
+  }
+
+}
+  
   
  
   
