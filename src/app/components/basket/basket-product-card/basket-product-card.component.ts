@@ -53,10 +53,10 @@ export class BasketProductCardComponent {
   // Fonction qui rempli un tableau avec les prix custom des pizza
   getPriceProductCustom() {
     for (let i = 0; i < this.basket.length; i++) {
-      const customisedItemPrice = this.customService.getCustomPrice(this.basket[i].product);
+      let customisedItemPrice = this.customService.getCustomPrice(this.basket[i].product);
       if (!customisedItemPrice) return
       this.allCustomisedProductPrice.push(customisedItemPrice);
-      console.log("Prix de l'article custom", customisedItemPrice)
+      //console.log("Prix de l'article custom", customisedItemPrice)
     }
     console.log("tableau custom", this.allCustomisedProductPrice);
   }
