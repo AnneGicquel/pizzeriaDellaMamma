@@ -5,10 +5,12 @@
     <div class="grid">
         <ng-container *ngFor="let product of products">
             <app-product-card *ngIf="product.category === 'pizza'" [product]= "product"></app-product-card>
-        </ng-container>
-        <br>
-        <br>    
+        </ng-container>  
     </div>
+
+    <br>
+    <br>  
+    <br>
 
 
     <h2>Les Desserts della Mamma</h2>
@@ -16,10 +18,11 @@
         <ng-container *ngFor="let product of products">
             <app-product-card *ngIf="product.category === 'dessert'" [product]= "product"></app-product-card>
         </ng-container>
-        <br>
-        <br>
     </div>
-
+    <br>
+    <br>
+    <br>
+    
 <h2>Les Boissons della Mamma</h2>
     <div class="grid">
         <ng-container *ngFor="let product of products">

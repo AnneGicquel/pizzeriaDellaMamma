@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
     ProductCardComponent,
     BasketProductCardComponent,
     TagTypeComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
