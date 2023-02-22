@@ -11,11 +11,11 @@ import { SummaryComponent } from './pages/summary/summary.component';
 import { ProductDetailsComponent } from './components/customisation/product-details/product-details.component';
 import { IngredientsIncludedComponent } from './components/customisation/ingredients-included/ingredients-included.component';
 import { IngredientsExtrasComponent } from './components/customisation/ingredients-extras/ingredients-extras.component';
-import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { TableNumberFormComponent } from './components/table-number-form/table-number-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
+import { TagTypeComponent } from './components/tag-type/tag-type.component';
 
 
 @NgModule({
@@ -28,11 +28,11 @@ import { BasketProductCardComponent } from './components/basket/basket-product-c
     ProductDetailsComponent,
     IngredientsIncludedComponent,
     IngredientsExtrasComponent,
-    TagTypeComponent,
     SummaryComponent,
     TableNumberFormComponent,
     ProductCardComponent,
     BasketProductCardComponent,
+    TagTypeComponent,
   ],
   imports: [
     BrowserModule,
