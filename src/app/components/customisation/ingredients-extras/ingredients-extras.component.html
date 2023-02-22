@@ -4,7 +4,7 @@
     <div class="ingredient-box">
         <div>
         <p class="ingredient-title">{{ingredients.ingredient.title}}</p>
-        <p class="ingredient-price">{{ingredients.additionalPrice}}</p>
+        <p class="ingredient-price">{{ingredients.additionalPrice /100| number :'1.2-2'}} €</p>
         </div>
 
         <div class="ingredient-quantity-picker">
