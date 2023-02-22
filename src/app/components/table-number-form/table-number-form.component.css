@@ -54,6 +54,22 @@
     color: #D9D9D9;;
   }
 
+.error-feedback{
+  position: absolute;
+  width: 265px;
+  height: 24px;
+  left: 177px;
+  top: 893px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  
+  color: #E12417;
+} 
+
 button{
     position: absolute;
     width: 195px;
