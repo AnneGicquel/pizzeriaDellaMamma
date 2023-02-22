@@ -26,6 +26,21 @@ hr:last-of-type {
 }
 
 input {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.round-checkbox {
     width: 23px;
     height: 23px;
+    border-radius: 50px;
+    background-color: var( --darkblue);
+    border: 3px var( --darkblue) solid;
+    margin-bottom: 0;
+}
+
+.round-checkbox-empty {
+    background-color: var(--whitecloud);
 }
