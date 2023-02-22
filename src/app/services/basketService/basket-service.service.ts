@@ -75,8 +75,8 @@ getBasketTotalPrice() : void {
     },0);
     // je donne le prix total au panier
     this.basketTotalPrice = totalPrice;
-    console.log("Prix Total", totalPrice);
-    console.log("prix total 2", this.basketTotalPrice);
+    console.log("Prix non customisé", totalPrice);
+    
 }
 
 // Fonction pour supprimer un produit
@@ -94,4 +94,7 @@ resetBasket() {
   basket.length = 0;
 }
 
+ngOnDestroy():void {
+
+}
 }

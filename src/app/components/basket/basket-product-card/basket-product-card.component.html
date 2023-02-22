@@ -9,7 +9,11 @@
                 <div class="information flex column">
                     <div>
                         <p>{{ IBasketProduct.product.title}}</p>
-                        <p><b>{{ IBasketProduct.product.price}} €</b></p>
+                        
+                        <p><b>{{ IBasketProduct.product.price/100| number :'1.2-2'}} €</b></p>
+                        <p><b> prix custom {{ customPrice}} €</b></p>
+                        
+                        
                     </div>
                     <div>
                         <p>Ingrédients</p>
