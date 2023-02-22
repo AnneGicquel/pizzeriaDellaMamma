@@ -1,7 +1,6 @@
 <main>
 
-    <a class="retour" routerLink="/category" >Retour aux produits</a>
-    <button class="reset" (click)="resetBasket()">Vider le panier</button>
+    
 
     <ul class="flex column">
         <li *ngFor="let IBasketProduct of basket; let index = index">
@@ -19,7 +18,7 @@
                     </div>
 
                 </div>
-                <button class="supprimer" (click)="removeProduct(index)">X</button>
+                <button class="supprimer" *ngIf="this.isButtonVisible" (click)="removeProduct(index)">X</button>
 
             </article>
 
@@ -27,7 +26,6 @@
     </ul>
 
     <p class="total"><b>Total</b>:  €</p>
-    <button class="envoyer">Table XX : Envoyer la commande en cuisine</button>
-    <a routerlink="/">Votre table n'est pas la XX ?</a>
+  
 
 </main>

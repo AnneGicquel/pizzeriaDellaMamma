@@ -1,7 +1,18 @@
 <main>
 
     <h2>Panier</h2>
-     <app-basket-product-card></app-basket-product-card>
+
+    <div class="lien flex">
+        <a class="retour" routerLink="/category">Retour aux produits</a>
+        <button class="reset" (click)="resetBasket()">Vider le panier</button>
+    </div>
+
+    <app-basket-product-card></app-basket-product-card>
+
+    <div class="flex column">
+        <button class="envoyer" routerLink="/summary">Table XX : Envoyer la commande en cuisine</button>
+        <a routerlink="/">Votre table n'est pas la XX ?</a>
+    </div>
 
 
 

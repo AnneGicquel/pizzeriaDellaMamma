@@ -1,0 +1,47 @@
+
+a {
+    text-align: end;
+    margin: 0 80px 10px 80px;
+    text-decoration: underline;
+    cursor: pointer;
+    color :#092947;
+}
+h2{
+    font-family: "Playfair Display";
+    font-style: italic;
+    color: #092947;
+    margin: 40px 80px 0px 90px;
+}
+.envoyer {
+    color : white;
+    background-color: #092947;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 80px 10px 80px;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction : column;
+}
+.lien{
+    justify-content: space-between;
+    margin-top:40px;
+}
+.retour {
+    text-decoration: underline;
+    cursor: pointer;
+    color :#092947; 
+    text-align:start;
+}
+.reset {
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+    text-align:end;
+    margin: 0 80px 10px 80px;
+}
