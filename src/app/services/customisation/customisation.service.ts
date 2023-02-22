@@ -40,7 +40,6 @@ export class CustomisationService {
 
     let maxQuantity = this.customProduct.extras[indexIngredient].maxQuantity;
     let quantity = this.customProduct.extras[indexIngredient].quantity;
-    let extraPrice = this.customProduct.extras[indexIngredient].additionalPrice;
 
     // Vérifier si l'on a atteint la quantité max
     if(quantity < maxQuantity) {
@@ -56,9 +55,7 @@ export class CustomisationService {
 
     if(!this.customProduct) return
 
-    let maxQuantity = this.customProduct.extras[indexIngredient].maxQuantity;
     let quantity = this.customProduct.extras[indexIngredient].quantity;
-    let extraPrice = this.customProduct.extras[indexIngredient].additionalPrice;
 
     if(quantity > 0) {
     // Retire 1
