@@ -29,6 +29,7 @@ export class BasketComponent {
 
   resetBasket() {
     this.basketService.resetBasket();
+    this.getBasket();
   }
   
 

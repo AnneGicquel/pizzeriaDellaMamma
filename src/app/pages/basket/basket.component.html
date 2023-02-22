@@ -2,6 +2,7 @@
 
     <h2>Panier</h2>
 
+    <section *ngIf="basket.length >0 ; else otherContent">
     <div class="lien flex">
         <a class="retour" routerLink="/category">Retour aux produits</a>
         <button class="reset" (click)="resetBasket()">Vider le panier</button>
@@ -15,6 +16,11 @@
         <a routerlink="">Votre table n'est pas la XX ?</a>
     </div>
 
+</section>
 
+<section class="otherContent">
+<ng-template #otherContent>Vous n'avez aucun article dans le panier.</ng-template>
+<a class="retour" routerLink="/category">Retour aux produits</a>
 
+</section>
 </main>

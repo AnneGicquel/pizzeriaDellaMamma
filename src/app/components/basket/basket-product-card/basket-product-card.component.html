@@ -5,7 +5,7 @@
     <ul class="flex column">
         <li *ngFor="let IBasketProduct of basket; let index = index">
             <article class="flex">
-                <img src="{{ IBasketProduct.product.picture }}" alt="{{ IBasketProduct.product.title }}">
+                <img src="assets/img/{{ IBasketProduct.product.picture }}" alt="{{ IBasketProduct.product.title }}">
                 <div class="information flex column">
                     <div>
                         <p>{{ IBasketProduct.product.title}}</p>
