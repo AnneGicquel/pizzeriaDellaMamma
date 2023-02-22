@@ -15,9 +15,8 @@ export class BasketProductCardComponent {
   basket: IBasketProduct[] = [];
 
   //je recupère la liste des produits temporaires customisé
-  productsList: IProduct[] = [];
-  customPrice? : number;
-  isCustomised: boolean = false;
+  // productsList: IProduct[] = [];
+  allCustomisedProductPrice: number[] = [];
 
   //propriété pour afficher le bouton supprimer un produit
   isButtonVisible: boolean = true;
@@ -25,16 +24,16 @@ export class BasketProductCardComponent {
   constructor(
     private basketService: BasketServiceService,
     private router: Router,
-    private customService: CustomisationService) {};
+    private customService: CustomisationService) { };
 
   ngOnInit() {
     this.getBasket();
     this.displayButtonRemoveProduct();
-    this.getCustomPrice();
   }
 
   getBasket() {
     this.basket = this.basketService.getBasket();
+    this.getPriceProductCustom();
   }
 
   removeProduct(index: number) {
@@ -42,7 +41,7 @@ export class BasketProductCardComponent {
     this.getBasket();
 
   }
- 
+
   //Fonction pour faire disparatitre le bouton supprimer un produit du panier quand on est sur la page summary
   displayButtonRemoveProduct() {
     //jSi je suis sur la page summary, je fais disparaitre le bouton supprimer un produit
@@ -51,8 +50,15 @@ export class BasketProductCardComponent {
     }
   }
 
-  getCustomPrice() {
-this.customPrice = this.customService.getCustomPrice();
-console.log("prix custom", this.customPrice);
+  // Fonction qui rempli un tableau avec les prix custom des pizza
+  getPriceProductCustom() {
+    for (let i = 0; i < this.basket.length; i++) {
+      const customisedItemPrice = this.customService.getCustomPrice(this.basket[i].product);
+      if (!customisedItemPrice) return
+      this.allCustomisedProductPrice.push(customisedItemPrice);
+      console.log("Prix de l'article custom", customisedItemPrice)
+    }
+    console.log("tableau custom", this.allCustomisedProductPrice);
   }
+
 }

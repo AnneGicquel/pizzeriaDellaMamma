@@ -20,4 +20,7 @@ constructor (public basketService: BasketServiceService) {}
     this.basket = this.basketService.getBasket();
   }
   
+  resetBasket(){
+    this.basketService.resetBasket();
+  }
 }
