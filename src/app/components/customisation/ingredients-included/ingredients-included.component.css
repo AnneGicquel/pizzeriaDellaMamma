@@ -17,6 +17,7 @@ div {
 
 hr {
     margin-bottom: 15px;
+    border: rgba(217, 217, 217, 1) 0.8px solid;
 }
 
 hr:last-of-type {

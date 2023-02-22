@@ -1,15 +1,26 @@
-<div class="bordure">
-
 <h1 class="benvenuto">Benvenuto !</h1>
 
-<!-- for pour lier le label à l'input -->
-<label for="table_number" class="instruction">Veuillez renseigner votre numéro de table</label>
 
 <!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
 <form [formGroup]="tableForm">
-    <!--attribuer un formControlName qui correspond à la clé de tableForm -->
-    <input type="text" value="Exemple : 42" class="entry-field" formControlName="table_number">
+
+    <!-- for pour lier le label à l'input -->
+    <label for="table_number" class="instruction">Veuillez renseigner votre numéro de table</label>
+
+    <div>
+        <!--attribuer un formControlName qui correspond à la clé de tableForm -->
+    
+        <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
+        <input type="text" placeholder="Exemple : 42"  class="entry-field" 
+            formControlName="table_number" [class.ifError]="validationError.includes('table_number')">
+        <p class="error-feedback" *ngIf="validationError.includes('table_number')">
+            Numéro de table incorrecte.
+        </p>
+    </div>
+
     <button type="submit" (click)="accessToMenu()">C’est parti !</button>
+
 </form>
-</div>
+
+
 

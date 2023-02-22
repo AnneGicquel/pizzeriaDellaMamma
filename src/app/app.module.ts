@@ -37,7 +37,8 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
