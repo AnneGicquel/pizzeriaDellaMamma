@@ -1,16 +1,19 @@
 <main>
 
-    <a class="retour" routerLink="/category" >Retour aux produits</a>
-    <button class="reset" (click)="resetBasket()">Vider le panier</button>
+    
 
     <ul class="flex column">
         <li *ngFor="let IBasketProduct of basket; let index = index">
             <article class="flex">
-                <img src="{{ IBasketProduct.product.picture }}" alt="{{ IBasketProduct.product.title }}">
+                <img src="assets/img/{{ IBasketProduct.product.picture }}" alt="{{ IBasketProduct.product.title }}">
                 <div class="information flex column">
                     <div>
                         <p>{{ IBasketProduct.product.title}}</p>
-                        <p><b>{{ IBasketProduct.product.price}} €</b></p>
+                        
+                        <!-- <p><b>{{ IBasketProduct.product.price/100| number :'1.2-2'}} €</b></p> -->
+                        <p><b>prix custom €</b></p>
+                        
+                        
                     </div>
                     <div>
                         <p>Ingrédients</p>
@@ -19,15 +22,13 @@
                     </div>
 
                 </div>
-                <button class="supprimer" (click)="removeProduct(index)">X</button>
+                <button class="supprimer" *ngIf="this.isButtonVisible" (click)="removeProduct(index)">X</button>
 
             </article>
 
         </li>
     </ul>
 
-    <p class="total"><b>Total</b>:  €</p>
-    <button class="envoyer">Table XX : Envoyer la commande en cuisine</button>
-    <a routerlink="/">Votre table n'est pas la XX ?</a>
+  
 
 </main>
