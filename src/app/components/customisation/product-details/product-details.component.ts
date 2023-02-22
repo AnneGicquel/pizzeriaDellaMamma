@@ -51,13 +51,13 @@ export class ProductDetailsComponent {
   // Ajout extra
   addOneExtra(index: number) {
     this.customService.addOneExtra(index);
-    this.customPrice = this.customService.getCustomPrice();
+    this.customPrice = this.customService.getCustomPrice(this.product!);
   }
 
   // Retire extra
   removeOneExtra(index: number) {
     this.customService.removeOneExtra(index);
-    this.customPrice = this.customService.getCustomPrice();
+    this.customPrice = this.customService.getCustomPrice(this.product!);
   }
   
   // Fonction pour ajouter au panier
