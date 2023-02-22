@@ -6,6 +6,7 @@ h2 {
 
 hr {
     margin-bottom: 15px;
+    border: rgba(217, 217, 217, 1) 0.8px solid;
 }
 
 hr:last-of-type {
@@ -23,6 +24,15 @@ button {
     background-color: var(--darkblue);
     border-radius: 50px;
     font-size: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: default;
 }
 
 .ingredient-box {
@@ -45,6 +55,10 @@ button {
     align-items: center;
     justify-content: center;
     gap: 12px;
+}
+
+.text-ingredient-quantity {
+    width: 10px;
 }
 
 .svg-plus, .svg-minus {
