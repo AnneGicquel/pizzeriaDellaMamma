@@ -53,7 +53,6 @@ export class BasketProductCardComponent {
 
   getCustomPrice() {
 this.customPrice = this.customService.getCustomPrice();
-this.isCustomised = true;
 console.log("prix custom", this.customPrice);
   }
 }
