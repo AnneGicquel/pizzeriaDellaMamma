@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
-import { IProduct, PRODUCTS } from 'src/app/mocks/products';
+import { BehaviorSubject } from 'rxjs';
+import { IProductsByCategory, TagType } from 'src/app/mocks/category';
+import { IProduct, PRODUCTS } from 'src/app/mocks/products'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
+
   constructor() { }
+
+
 
   getProducts():IProduct[]{
     return PRODUCTS;
+    // .pipe(map((res:any)=>
+    // return:res;
   }
 
   getProduct(id: number) : IProduct | undefined {
     return PRODUCTS.find(product => product.id === id);
   }
+
 
 }
 
