@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from 'src/app/mocks/products';
-import { CustomisationService } from 'src/app/services/customisation/customisation.service';
 
 @Component({
   selector: 'app-ingredients-included',
@@ -12,12 +11,27 @@ export class IngredientsIncludedComponent {
   @Input() product!: IProduct;
   @Output() toggle = new EventEmitter();
 
-  constructor(
-    private customService: CustomisationService
-  ) { }
+  checkboxIsNotChecked: number = 2000;
+
+  ngOnInit() {
+    this.sortIngredientsByAlpha();
+  }
 
   toggleIncludedIngredient(input: number) {
     this.toggle.emit(input);
+
+    if(this.checkboxIsNotChecked) {
+      this.checkboxIsNotChecked = input;
+    } else {
+      this.checkboxIsNotChecked = 2000;
+    }
+
+  }
+
+  sortIngredientsByAlpha() {
+    this.product.includedIngredients.sort(function (a, b) {
+      return a.ingredient.title.localeCompare(b.ingredient.title);
+    });
   }
 
 }

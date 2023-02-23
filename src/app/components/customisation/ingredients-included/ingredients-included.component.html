@@ -3,7 +3,9 @@
 <ng-container *ngFor="let ingredients of product.includedIngredients; index as i">
     <div>
         <p>{{ingredients.ingredient.title}}</p>
+        <div class="round-checkbox" [class.round-checkbox-empty]="checkboxIsNotChecked === i">
         <input (click)="toggleIncludedIngredient(i)" type="checkbox" name="included-ingredients" id="included-ingredients" checked>
+        </div>
     </div>
     <hr>
 </ng-container>
