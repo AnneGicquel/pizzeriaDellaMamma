@@ -1,5 +1,34 @@
-# PizzeriaDellaMamma
+# Pizzeria Della Mamma 🍕
 
+La chaîne de restaurants Pizzeria Della Mamma souhaite automatiser la prise de commande en restaurant. Pour cela, chaque tablée se verra attribuer une tablette au moment de s’installer. Les clients pourront alors customiser leurs pizzas, créer leur commande, et l’envoyer en cuisine directement.
+
+Les dimensions des tablettes seront fixées à 960px par 1494px, le site n'est donc pas responsive.
+
+**Répartition de la création des features dans l'équipe :**
+
+🍕 - Anne : La sélection et modification du numéro de table
+🍕 - Cynthia : La création du panier et l'envoi de la commande
+🍕 - Jiyun : L’affichage des produits classés par type de produits
+🍕 - Clara : La customisation d’un produit
+
+## Sélection et modification du numéro de table
+
+Description feature
+
+## Affichage des produits classés par type de produits
+
+Description feature
+
+## Customisation d’un produit
+
+Description feature
+
+## Création du panier et de l'envoi de la commande
+
+Description feature
+
+
+## Environnement
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
