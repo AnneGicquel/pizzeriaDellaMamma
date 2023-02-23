@@ -9,7 +9,7 @@
     </div>
 
     <app-basket-product-card></app-basket-product-card>
-    <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice }}  €</p>
+    <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice/100| number :'1.2-2' }}  €</p>
 
     <div class="flex column">
         <button class="envoyer" routerLink="/summary">Table {{ getTableNumber() }} : Envoyer la commande en cuisine</button>

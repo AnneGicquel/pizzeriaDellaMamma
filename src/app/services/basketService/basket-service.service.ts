@@ -6,6 +6,7 @@ import { ProductService } from '../products/product.service';
 //Créer une interface pour le panier avec une seule propriété le produit
 export interface IBasketProduct {
   product: IProduct;
+  customPrice : number;
 }
 
 
