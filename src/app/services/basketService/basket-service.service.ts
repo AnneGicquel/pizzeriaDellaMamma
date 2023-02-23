@@ -16,6 +16,8 @@ export class BasketServiceService {
 
   //j'initialise mon panier total à 0
   basketTotalPrice: number = 0;
+  quantity : number = 0;
+  
 
   // j'utilise le service Product Service
   constructor(private productService: ProductService) { }
@@ -55,6 +57,9 @@ addToBasket(basketProduct : IBasketProduct) {
   const basket = this.getBasket();
   // on ajoute le produit dans le panier
   basket.push(basketProduct);
+  //recuperer la quantite
+  this.getQuantityBasket();
+  console.log("nouvelle quantity", this.getQuantityBasket());
   //je sauvegarde mon panier
   this.saveBasket(basket);
 }
@@ -85,6 +90,7 @@ const basket = this.getBasket();
 // je retire l'élément de mon panier
 basket.splice(index,1);
 this.getBasketTotalPrice();
+this.getQuantityBasket();
 this.saveBasket(basket);
 
 }
@@ -94,5 +100,12 @@ resetBasket() {
   this.getBasket();
 }
 
+//fonction pour récuperer le nombre d'articles dans mon panier
+getQuantityBasket() {
+  const basket = this.getBasket();
+  this.quantity = basket.length;
+  return this.quantity;
+
+}
 
 }

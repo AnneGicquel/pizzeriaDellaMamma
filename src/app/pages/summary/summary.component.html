@@ -2,7 +2,7 @@
 
 <p class="bonAppetit center">Buon Appetito!</p>
 
-<p class="summary">Commande table xx</p>
+<p class="summary">Commande table {{ getTableNumber()}}</p>
 
 <app-basket-product-card></app-basket-product-card>
 <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice }}  €</p>
