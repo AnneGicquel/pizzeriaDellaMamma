@@ -17,6 +17,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { HeaderComponent } from './components/header/header.component';
     BasketProductCardComponent,
     TagTypeComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

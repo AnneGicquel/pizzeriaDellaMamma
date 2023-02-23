@@ -75,7 +75,7 @@ export class TableNumberFormComponent {
     return getNumberTable !== null ? 'Table '+getNumberTable : 'Benvenuto'
   }
   
-
+  
   getLabel(){
     const getNumberTable = this.tableFormService.getTableNumberInfo();
     return getNumberTable !== null ? 'Modifier mon numéro de table' : 'Veuillez renseigner votre numéro de table'
