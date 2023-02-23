@@ -11,7 +11,7 @@
                         <p>{{ IBasketProduct.product.title}}</p>
 
                         <!-- <p><b>{{ IBasketProduct.product.price/100| number :'1.2-2'}} €</b></p> -->
-                        <p><b>prix custom €</b></p>
+                        <p><b>{{ IBasketProduct.customPrice/100 | number :'1.2-2' }} €</b></p>
 
 
                     </div>
@@ -25,7 +25,7 @@
                         <!-- <p>Extras</p> -->
                         <ng-container *ngFor="let extra of IBasketProduct.product.extras ; index as i ">
                             <!-- <p *ngIf= "ingredient[i].isSelected === false "> 0</p> -->
-                            <span *ngIf="extra.quantity > 0 "> Extra : {{ extra.quantity}} {{ extra.ingredient.title }} (+  {{extra.quantity * extra.additionalPrice}} )</span>
+                            <span *ngIf="extra.quantity > 0 "> Extra : {{ extra.quantity}} {{ extra.ingredient.title }} (+ {{extra.quantity * extra.additionalPrice/100| number :'1.2-2'}} €)</span>
                         </ng-container>
 
 

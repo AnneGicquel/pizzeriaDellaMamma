@@ -6,6 +6,7 @@ import { ProductService } from '../products/product.service';
 //Créer une interface pour le panier avec une seule propriété le produit
 export interface IBasketProduct {
   product: IProduct;
+  customPrice: number;
 }
 
 
@@ -16,8 +17,8 @@ export class BasketServiceService {
 
   //j'initialise mon panier total à 0
   basketTotalPrice: number = 0;
-  quantity : number = 0;
-  
+  quantity: number = 0;
+
 
   // j'utilise le service Product Service
   constructor(private productService: ProductService) { }
@@ -37,75 +38,86 @@ export class BasketServiceService {
     this.getBasketTotalPrice();
   }
 
-// Methode pour récupérer le panier et le créer si il n'existe pas
-getBasket() {
-  //on stocke dans une variable basket le panier que l'on a récupéré dans le local storage
-  const basket = localStorage.getItem('basket');
-  //si le panier existe, je le transforme en objet et le retourne
-  if(basket) {
-    return JSON.parse(basket);
-  } else {
-    //sinon on crée le panier et on le récupère , on fait une récursivité sur la fonction getBasket
-    this.createBasket();
-    this.getBasket();
+  // Methode pour récupérer le panier et le créer si il n'existe pas
+  getBasket() {
+    //on stocke dans une variable basket le panier que l'on a récupéré dans le local storage
+    const basket = localStorage.getItem('basket');
+    //si le panier existe, je le transforme en objet et le retourne
+    if (basket) {
+      return JSON.parse(basket);
+    } else {
+      //sinon on crée le panier et on le récupère , on fait une récursivité sur la fonction getBasket
+      this.createBasket();
+      this.getBasket();
+    }
   }
-}
 
-// Fonction pour ajouter au panier
-addToBasket(basketProduct : IBasketProduct) {
-  // on récupère le panier
-  const basket = this.getBasket();
-  // on ajoute le produit dans le panier
-  basket.push(basketProduct);
-  //recuperer la quantite
-  this.getQuantityBasket();
-  console.log("nouvelle quantity", this.getQuantityBasket());
-  //je sauvegarde mon panier
-  this.saveBasket(basket);
-}
+  // Fonction pour ajouter au panier
+  addToBasket(basketProduct: IBasketProduct) {
+    // on récupère le panier
+    const basket = this.getBasket();
+    // on ajoute le produit dans le panier
+    basket.push(basketProduct);
+    //recuperer la quantite
+    this.getQuantityBasket();
+    console.log("nouvelle quantity", this.getQuantityBasket());
+    //je sauvegarde mon panier
+    this.saveBasket(basket);
+  }
 
-// Fonction pour avoir le prix total du panier
-getBasketTotalPrice() : void {
-  // on récupère le panier
-  const basket = this.getBasket();
-// on utilise la methode reduce avec accumulator et current value pour avoir le prix total du panier
-  const totalPrice = basket.reduce((accumulator: number, currentValue: IBasketProduct) => {
-    // je recupère mon produit par id dans mon mock
-    const product = this.productService.getProduct(currentValue.product.id);
-    // si le produit n'existe pas je retourne la valeur de l'accumulator
-    if (!product) return accumulator;
-    // si le produit exsite on calcule le prix total
-    return accumulator + (product!.price);
-    //initialisation de l'accumulator à 0
-    },0);
+  // Fonction pour avoir le prix total du panier
+  getBasketTotalPrice(): void {
+    // on récupère le panier
+    const basket = this.getBasket();
+    // on utilise la methode reduce avec accumulator et current value pour avoir le prix total du panier
+    const totalPrice = basket.reduce((accumulator: number, currentValue: IBasketProduct) => {
+      // je recupère mon produit par id dans mon mock
+      const product = this.productService.getProduct(currentValue.product.id);
+      // si le produit n'existe pas je retourne la valeur de l'accumulator
+      if (!product) return accumulator;
+      // si le produit exsite on calcule le prix total
+      return accumulator + (product!.price);
+      //initialisation de l'accumulator à 0
+    }, 0);
     // je donne le prix total au panier
     this.basketTotalPrice = totalPrice;
     console.log("Prix total", totalPrice);
-    
-}
 
-// Fonction pour supprimer un produit
-removeProduct(index: number) {
-const basket = this.getBasket();
-// je retire l'élément de mon panier
-basket.splice(index,1);
-this.getBasketTotalPrice();
-this.getQuantityBasket();
-this.saveBasket(basket);
+  }
 
-}
 
-resetBasket() {
-  localStorage.clear();
-  this.getBasket();
-}
+  getBasketTotalPriceCustom(): void {
+  //   const basket = this.getBasket();
+  //   const totalPriceCustom = basket.reduce((accumulator: number, currentValue: IBasketProduct) => {
+  //     const product = this.productService.getProduct(currentValue.product.id);
+  //     if (!product) return accumulator;
+  //     return accumulator + (product!.customPrice);
+  //   }, 0);
 
-//fonction pour récuperer le nombre d'articles dans mon panier
-getQuantityBasket() {
-  const basket = this.getBasket();
-  this.quantity = basket.length;
-  return this.quantity;
+  }
 
-}
+  // Fonction pour supprimer un produit
+  removeProduct(index: number) {
+    const basket = this.getBasket();
+    // je retire l'élément de mon panier
+    basket.splice(index, 1);
+    this.getBasketTotalPrice();
+    this.getQuantityBasket();
+    this.saveBasket(basket);
+
+  }
+
+  resetBasket() {
+    localStorage.clear();
+    this.getBasket();
+  }
+
+  //fonction pour récuperer le nombre d'articles dans mon panier
+  getQuantityBasket() {
+    const basket = this.getBasket();
+    this.quantity = basket.length;
+    return this.quantity;
+
+  }
 
 }
