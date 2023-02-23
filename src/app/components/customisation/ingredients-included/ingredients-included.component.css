@@ -13,6 +13,7 @@ div {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    position: relative;
 }
 
 hr {
@@ -25,22 +26,27 @@ hr:last-of-type {
     display: none;
 }
 
-input {
-    width: 30px;
+input[type="checkbox"] {
+    width: 25px;
     height: 30px;
     opacity: 0;
     cursor: pointer;
+    z-index: 5;
 }
 
 .round-checkbox {
+    background-color: var(--whitecloud);
+    border: 3px var( --darkblue) solid;
     width: 23px;
     height: 23px;
     border-radius: 50px;
-    background-color: var( --darkblue);
-    border: 3px var( --darkblue) solid;
     margin-bottom: 0;
+    position: absolute;
+    right: 0;
 }
 
-.round-checkbox-empty {
-    background-color: var(--whitecloud);
+input[type="checkbox"]:checked+.round-checkbox {
+    background-color: var( --darkblue);
+    border: 3px var( --darkblue) solid;
 }
+

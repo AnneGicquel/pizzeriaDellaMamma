@@ -11,7 +11,7 @@ export class IngredientsIncludedComponent {
   @Input() product!: IProduct;
   @Output() toggle = new EventEmitter();
 
-  checkboxIsNotChecked: number = 2000;
+  checkboxIsNotChecked: number[] = [];
 
   ngOnInit() {
     this.sortIngredientsByAlpha();
@@ -19,12 +19,6 @@ export class IngredientsIncludedComponent {
 
   toggleIncludedIngredient(input: number) {
     this.toggle.emit(input);
-
-    if(this.checkboxIsNotChecked) {
-      this.checkboxIsNotChecked = input;
-    } else {
-      this.checkboxIsNotChecked = 2000;
-    }
 
   }
 
