@@ -6,10 +6,10 @@ Les dimensions des tablettes seront fixées à 960px par 1494px, le site n'est d
 
 **Répartition de la création des features dans l'équipe :**
 
-🍕 - Anne : La sélection et modification du numéro de table
-🍕 - Cynthia : La création du panier et l'envoi de la commande
-🍕 - Jiyun : L’affichage des produits classés par type de produits
-🍕 - Clara : La customisation d’un produit
+🍕 - Anne : La sélection et modification du numéro de table  
+🍕 - Cynthia : La création du panier et l'envoi de la commande  
+🍕 - Jiyun : L’affichage des produits classés par type de produits  
+🍕 - Clara : La customisation d’un produit  
 
 ## Sélection et modification du numéro de table
 
