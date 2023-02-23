@@ -65,36 +65,15 @@ export class BasketServiceService {
     this.saveBasket(basket);
   }
 
-  // Fonction pour avoir le prix total du panier
   getBasketTotalPrice(): void {
-    // on récupère le panier
+    this.basketTotalPrice = 0;
     const basket = this.getBasket();
-    // on utilise la methode reduce avec accumulator et current value pour avoir le prix total du panier
-    const totalPrice = basket.reduce((accumulator: number, currentValue: IBasketProduct) => {
-      // je recupère mon produit par id dans mon mock
-      const product = this.productService.getProduct(currentValue.product.id);
-      // si le produit n'existe pas je retourne la valeur de l'accumulator
-      if (!product) return accumulator;
-      // si le produit exsite on calcule le prix total
-      return accumulator + (product!.price);
-      //initialisation de l'accumulator à 0
-    }, 0);
-    // je donne le prix total au panier
-    this.basketTotalPrice = totalPrice;
-    console.log("Prix total", totalPrice);
+   for (let i =0; i < basket.length; i++) {
+    this.basketTotalPrice = this.basketTotalPrice + basket[i].customPrice;
+   }
+    
+  } 
 
-  }
-
-
-  getBasketTotalPriceCustom(): void {
-  //   const basket = this.getBasket();
-  //   const totalPriceCustom = basket.reduce((accumulator: number, currentValue: IBasketProduct) => {
-  //     const product = this.productService.getProduct(currentValue.product.id);
-  //     if (!product) return accumulator;
-  //     return accumulator + (product!.customPrice);
-  //   }, 0);
-
-  }
 
   // Fonction pour supprimer un produit
   removeProduct(index: number) {
