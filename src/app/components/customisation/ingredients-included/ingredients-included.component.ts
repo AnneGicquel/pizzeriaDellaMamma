@@ -13,6 +13,10 @@ export class IngredientsIncludedComponent {
 
   checkboxIsNotChecked: number = 2000;
 
+  ngOnInit() {
+    this.sortIngredientsByAlpha();
+  }
+
   toggleIncludedIngredient(input: number) {
     this.toggle.emit(input);
 
@@ -22,6 +26,12 @@ export class IngredientsIncludedComponent {
       this.checkboxIsNotChecked = 2000;
     }
 
+  }
+
+  sortIngredientsByAlpha() {
+    this.product.includedIngredients.sort(function (a, b) {
+      return a.ingredient.title.localeCompare(b.ingredient.title);
+    });
   }
 
 }

@@ -16,11 +16,19 @@ export class IngredientsExtrasComponent {
   rowAddToDisable!: number;
 
   ngOnInit() {
-    // Une boucle pour initialiser tous les boutons - à false
+    this.sortExtraByAlpha();
+    
+    // Une boucle pour initialiser tous les boutons - à true
     for (let i = 0; i < this.product.extras.length; i++) {
       this.removeOneExtra(i);
     }
 
+  }
+
+  sortExtraByAlpha() {
+    this.product.extras.sort(function (a, b) {
+      return a.ingredient.title.localeCompare(b.ingredient.title);
+    });
   }
 
   addOneExtra(input: number) {
