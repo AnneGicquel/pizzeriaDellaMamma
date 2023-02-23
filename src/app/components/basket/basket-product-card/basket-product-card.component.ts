@@ -56,6 +56,7 @@ export class BasketProductCardComponent {
       let customisedItemPrice = this.customService.getCustomPrice(this.basket[i].product);
       if (!customisedItemPrice) return
       this.allCustomisedProductPrice.push(customisedItemPrice);
+      console.log("prix custom d'un article", customisedItemPrice);
       //console.log("Prix de l'article custom", customisedItemPrice)
     }
     console.log("tableau custom", this.allCustomisedProductPrice);
