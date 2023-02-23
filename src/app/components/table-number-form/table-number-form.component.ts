@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TableFormServiceService } from 'src/app/services/tableFormService/table-form-service.service';
 
 @Component({
   selector: 'app-table-number-form',
@@ -15,8 +16,9 @@ export class TableNumberFormComponent {
   // tableau pour recueillir les erreurs de saisie 
   validationError: string[]=[];
 
+
   // injecter dans le constructeur formBuilder
-  constructor(private formBuilder : FormBuilder, private router: Router ){
+  constructor(private formBuilder : FormBuilder, private router: Router, private tableFormService: TableFormServiceService ){
 
   }
 
@@ -31,9 +33,11 @@ export class TableNumberFormComponent {
       table_number:[null, [Validators.required, Validators.pattern(/^[1-9]$|^1[0-4]$/)]]
     })
 
-  }
-  
+    // VERIF
+    // console.log('getTableNumberInfo()', this.tableFormService.getTableNumberInfo());
 
+
+  }
 
   // méthode qui vérifie si le formulaire est valide ou non
   accessToMenu() {
@@ -52,16 +56,42 @@ export class TableNumberFormComponent {
         // console.log(control,currentInput);
         // status: INVALID vient du détail du control (ds console js)
         // si il y a un objet et que son status est invalid
-        // if (currentInput && currentInput.status === "INVALID");
         return currentInput && currentInput.status === "INVALID";
       });
       // affecter invalidControls à la propriété validationError.
       this.validationError = invalidControls;
     } else {
-      // si valide, redirige vers la page category
+      // si valide, stocke dans la localstorage et redirige vers la page category
+      // par le service TableForm -> récupération de l'objet.value -> du champ tableForm
+      this.tableFormService.storeTableNumberInfo(this.tableForm.value.table_number);
       this.router.navigate(['/category']);
+      
     }
   }
+  
+
+  getTitle() {
+    const getNumberTable = this.tableFormService.getTableNumberInfo();
+    return getNumberTable !== null ? 'Table '+getNumberTable : 'Benvenuto'
+  }
+  
+
+  getLabel(){
+    const getNumberTable = this.tableFormService.getTableNumberInfo();
+    return getNumberTable !== null ? 'Modifier mon numéro de table' : 'Veuillez renseigner votre numéro de table'
+  }
+
+  getButton(){
+    const getNumberTable = this.tableFormService.getTableNumberInfo();
+    return getNumberTable !== null ? 'Modifier' : 'C’est parti !'
+  }
+
+  getLinkToOrder(){
+    const getNumberTable = this.tableFormService.getTableNumberInfo();
+    return getNumberTable !== null ? 'Revenir à la commande':''
+  }
+
+  // + display navbar!!
 
 }
   
