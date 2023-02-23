@@ -2,7 +2,7 @@
 
     <h2>Panier</h2>
 
-    <section *ngIf="basket.length >0 ; else otherContent">
+    <section *ngIf="basket.length > 0 ; else otherContent">
     <div class="lien flex">
         <a class="retour" routerLink="/category">Retour aux produits</a>
         <button class="reset" (click)="resetBasket()">Vider le panier</button>
@@ -12,8 +12,8 @@
     <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice }}  €</p>
 
     <div class="flex column">
-        <button class="envoyer" routerLink="/summary">Table XX : Envoyer la commande en cuisine</button>
-        <a routerlink="">Votre table n'est pas la XX ?</a>
+        <button class="envoyer" routerLink="/summary">Table {{ getTableNumber() }} : Envoyer la commande en cuisine</button>
+        <a routerLink="" (click)="resetBasket()">Votre table n'est pas la {{ getTableNumber() }} ?</a>
     </div>
 
 </section>
