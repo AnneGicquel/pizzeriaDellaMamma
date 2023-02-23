@@ -16,15 +16,16 @@
 
                     </div>
                     <div>
-                        <ng-container *ngFor="let ingredient of IBasketProduct.product.includedIngredients ; index as i ">
+                        <ng-container
+                            *ngFor="let ingredient of IBasketProduct.product.includedIngredients ; index as i ">
                             <!-- <p *ngIf= "ingredient[i].isSelected === false "> 0</p> -->
                             <span *ngIf="!ingredient.isSelected"> Ø {{ ingredient.ingredient.title }}</span>
                         </ng-container>
-
-                            <!-- <p>Extras</p> -->
-                           <ng-container *ngFor="let ingredient of IBasketProduct.product.includedIngredients ; index as i ">
+                        <br>
+                        <!-- <p>Extras</p> -->
+                        <ng-container *ngFor="let extra of IBasketProduct.product.extras ; index as i ">
                             <!-- <p *ngIf= "ingredient[i].isSelected === false "> 0</p> -->
-                            <span *ngIf="!ingredient.isSelected"> Ø {{ ingredient.ingredient.title }}</span>
+                            <span *ngIf="extra.quantity > 0 "> Extra : {{ extra.quantity}} {{ extra.ingredient.title }} (+  {{extra.quantity * extra.additionalPrice}} )</span>
                         </ng-container>
 
 
