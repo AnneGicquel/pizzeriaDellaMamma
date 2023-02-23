@@ -32,38 +32,5 @@ main {
     justify-content: space-between;
     margin: 10px 10px;
 }
-.envoyer {
-    color : white;
-    background-color: #092947;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 20px 80px 10px 80px;
-}
-.total{
-    margin: 20px 80px 10px 80px;
-    
-}
-a {
-    text-align: end;
-    margin: 0 80px 10px 80px;
-    text-decoration: underline;
-    cursor: pointer;
-    color :#092947;
-}
-.retour {
-    margin: 0 80px 10px 80px;
-    text-decoration: underline;
-    cursor: pointer;
-    color :#092947; 
-    text-align:start; 
-}
-.reset {
-    text-decoration: underline;
-    cursor: pointer;
-    color: red;
-    text-align:end;
-    margin: 0 80px 10px 80px;
-}
+
+

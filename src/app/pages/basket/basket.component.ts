@@ -12,20 +12,25 @@ export class BasketComponent {
   basket : IBasketProduct[] = [];
   
 
-  constructor (public basketservice: BasketServiceService) {}
+  constructor (public basketService: BasketServiceService) {}
 
   ngOnInit() {
     this.getBasket();
   }
 
   getBasket() {
-    this.basket = this.basketservice.getBasket();
+    this.basket = this.basketService.getBasket();
   }
 
   removeProduct(index: number) {
-    this.basketservice.removeProduct(index);
+    this.basketService.removeProduct(index);
     this.getBasket();
   }
 
+  resetBasket() {
+    this.basketService.resetBasket();
+    this.getBasket();
+  }
+  
 
 }
