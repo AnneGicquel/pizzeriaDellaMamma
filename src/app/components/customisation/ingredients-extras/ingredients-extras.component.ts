@@ -12,23 +12,19 @@ export class IngredientsExtrasComponent {
   @Output() addOne = new EventEmitter();
   @Output() removeOne = new EventEmitter();
 
-  rowRemoveToDisable!: number;
-  rowAddToDisable!: number;
+  rowRemoveToDisable: number[] = [];
+  rowAddToDisable: number[] = [];
 
   ngOnInit() {
     this.sortExtraByAlpha();
-    
-    // Une boucle pour initialiser tous les boutons - à true
-    for (let i = 0; i < this.product.extras.length; i++) {
-      this.removeOneExtra(i);
-    }
-
+    this.initButtonStyle();
   }
 
-  sortExtraByAlpha() {
-    this.product.extras.sort(function (a, b) {
-      return a.ingredient.title.localeCompare(b.ingredient.title);
-    });
+  initButtonStyle() { 
+    // Une boucle pour initialiser tous les boutons - à [disabled]=true
+    for (let i = 0; i < this.product.extras.length; i++) {
+      this.rowRemoveToDisable.push(i);
+    }
   }
 
   addOneExtra(input: number) {
@@ -46,18 +42,24 @@ export class IngredientsExtrasComponent {
     let currentQuantity = this.product.extras[input].quantity;
 
     if (currentQuantity <= 0) {
-      this.rowRemoveToDisable = input;
-      this.rowAddToDisable = 3000;
+      this.rowRemoveToDisable[input] = input;
+      this.rowAddToDisable[input] = 3000;
 
     } else if (currentQuantity < maxQuantity) {
-      this.rowRemoveToDisable = 3000;
-      this.rowAddToDisable = 3000;
+      this.rowRemoveToDisable[input] = 3000;
+      this.rowAddToDisable[input] = 3000;
 
     } else if (currentQuantity >= maxQuantity) {
-      this.rowRemoveToDisable = 3000;
-      this.rowAddToDisable = input;
+      this.rowRemoveToDisable[input] = 3000;
+      this.rowAddToDisable[input] = input;
 
     }
+  }
+
+  sortExtraByAlpha() {
+    this.product.extras.sort(function (a, b) {
+      return a.ingredient.title.localeCompare(b.ingredient.title);
+    });
   }
 
 
