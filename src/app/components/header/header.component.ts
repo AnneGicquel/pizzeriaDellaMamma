@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 
 @Component({
@@ -9,22 +10,32 @@ import { BasketServiceService, IBasketProduct } from 'src/app/services/basketSer
 export class HeaderComponent {
 
   basket : IBasketProduct[] = [];
-  quantity?: number = 0;
+  isVisibleBasket: boolean = true;
+ 
   
 
-  constructor (private basketService : BasketServiceService) {}
+  constructor (
+    public basketService : BasketServiceService,
+    public router : Router
+    ) {}
 
   ngOnInit() {
-    this.getNumberBasket();
+    this.basketService.getBasket();
+    this.getQuantityBasket();
+    this.displayIcons();
   }
 
 
-  getNumberBasket() {
-    const basket = this.basketService.getBasket();
-    const quantity = basket.length;
-    this.quantity = quantity;
-    
+  getQuantityBasket() {
+    this.basketService.getQuantityBasket();
+  }
+
+  displayIcons() {
+    if (this.router.url.endsWith("/summary")) {
+      this.isVisibleBasket = false;
+    }
+    console.log("icone basket après", this.isVisibleBasket);
+  }
+
   
-  }
-
 }

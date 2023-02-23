@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProduct } from 'src/app/mocks/products';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
 import { TableFormServiceService } from 'src/app/services/tableFormService/table-form-service.service';
@@ -11,11 +12,13 @@ import { TableFormServiceService } from 'src/app/services/tableFormService/table
 export class BasketComponent {
 
   basket : IBasketProduct[] = [];
+  //isVisibleBasket: boolean = true;
   
 
   constructor (
     public basketService: BasketServiceService,
     private tableFormService : TableFormServiceService,
+    public router : Router
     ) {}
 
   ngOnInit() {
@@ -43,5 +46,11 @@ export class BasketComponent {
     return tableNumber;
     console.log('table', tableNumber);
   }
+  // displayIcons() {
+  //   if (this.router.url.endsWith("/summary")) {
+  //     this.isVisibleBasket = false;
+  //   }
+  //   console.log("icone basket après", this.isVisibleBasket);
+  // }
 
 }
