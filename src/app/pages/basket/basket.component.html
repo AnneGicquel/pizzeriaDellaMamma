@@ -1,8 +1,28 @@
 <main>
 
     <h2>Panier</h2>
-     <app-basket-product-card></app-basket-product-card>
 
+    <section *ngIf="basket.length > 0 ; else otherContent">
+    <div class="lien flex">
+        <a class="retour" routerLink="/category">Retour aux produits</a>
+        <button class="reset" (click)="resetBasket()">Vider le panier</button>
+    </div>
+
+    <app-basket-product-card></app-basket-product-card>
+    <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice }}  €</p>
+
+    <div class="flex column">
+        <button class="envoyer" routerLink="/summary">Table {{ getTableNumber() }} : Envoyer la commande en cuisine</button>
+        <a routerLink="" (click)="resetBasket()">Votre table n'est pas la {{ getTableNumber() }} ?</a>
+    </div>
+
+</section>
+
+
+<ng-template #otherContent>
+    <p>Vous n'avez aucun article dans le panier.</p>
+    <a class="retour" routerLink="/category">Retour aux produits</a>
+</ng-template>
 
 
 </main>

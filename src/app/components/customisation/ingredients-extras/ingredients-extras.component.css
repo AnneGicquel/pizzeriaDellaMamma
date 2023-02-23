@@ -24,6 +24,7 @@ button {
     background-color: var(--darkblue);
     border-radius: 50px;
     font-size: 25px;
+    transition: all 0.2s;
 }
 
 button:hover {
@@ -33,6 +34,7 @@ button:hover {
 button:disabled {
     opacity: 0.6;
     cursor: default;
+    transition: all 0.2s;
 }
 
 .ingredient-box {

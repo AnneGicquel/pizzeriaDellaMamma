@@ -19,7 +19,7 @@ import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs/internal/Subscription';
-
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,15 +36,15 @@ import { Subscription } from 'rxjs/internal/Subscription';
     ProductCardComponent,
     BasketProductCardComponent,
     TagTypeComponent,
-    FilterPipe,
-    
-
+    HeaderComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    
 
   ],
   providers: [],

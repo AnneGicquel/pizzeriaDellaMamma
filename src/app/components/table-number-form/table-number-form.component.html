@@ -1,12 +1,15 @@
-<h1 class="benvenuto">Benvenuto !</h1>
+<h1 class="benvenuto">
+    {{getTitle()}}
+</h1>
 
 
 <!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
 <form [formGroup]="tableForm">
 
     <!-- for pour lier le label à l'input -->
-    <label for="table_number" class="instruction">Veuillez renseigner votre numéro de table</label>
-
+    <label for="table_number" class="instruction">{{getLabel()}}</label>
+    
+    
     <div>
         <!--attribuer un formControlName qui correspond à la clé de tableForm -->
     
@@ -18,9 +21,9 @@
         </p>
     </div>
 
-    <button type="submit" (click)="accessToMenu()">C’est parti !</button>
+    <button type="submit" (click)="accessToMenu()">{{getButton()}}</button>
 
 </form>
 
-
+<a routerLink="/basket" class="linkToOrder">{{getLinkToOrder()}}</a>
 

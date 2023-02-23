@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { IProduct } from 'src/app/mocks/products';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
+import { CustomisationService } from 'src/app/services/customisation/customisation.service';
 
 @Component({
   selector: 'app-basket-product-card',
@@ -8,28 +11,55 @@ import { BasketServiceService, IBasketProduct } from 'src/app/services/basketSer
 })
 export class BasketProductCardComponent {
 
-// Je récupère mon panier
-basket: IBasketProduct[] = [];
+  // Je récupère mon panier
+  basket: IBasketProduct[] = [];
 
-constructor (private basketService : BasketServiceService) {};
+  //je recupère la liste des produits temporaires customisé
+  // productsList: IProduct[] = [];
+  allCustomisedProductPrice: number[] = [];
 
-ngOnInit() {
-  this.getBasket();
-}
+  //propriété pour afficher le bouton supprimer un produit
+  isButtonVisible: boolean = true;
 
-getBasket() {
-  this.basket = this.basketService.getBasket();
-}
+  constructor(
+    private basketService: BasketServiceService,
+    private router: Router,
+    private customService: CustomisationService) { };
 
-removeProduct(index:number) {
-  this.basketService.removeProduct(index);
-  this.getBasket();
+  ngOnInit() {
+    this.getBasket();
+    this.displayButtonRemoveProduct();
+  }
 
-}
-resetBasket() {
-  this.basketService.resetBasket();
-}
+  getBasket() {
+    this.basket = this.basketService.getBasket();
+    this.getPriceProductCustom();
+  }
 
+  removeProduct(index: number) {
+    this.basketService.removeProduct(index);
+    this.getBasket();
 
+  }
+
+  //Fonction pour faire disparatitre le bouton supprimer un produit du panier quand on est sur la page summary
+  displayButtonRemoveProduct() {
+    //jSi je suis sur la page summary, je fais disparaitre le bouton supprimer un produit
+    if (this.router.url.endsWith("/summary")) {
+      this.isButtonVisible = false;
+    }
+  }
+
+  // Fonction qui rempli un tableau avec les prix custom des pizza
+  getPriceProductCustom() {
+    for (let i = 0; i < this.basket.length; i++) {
+      let customisedItemPrice = this.customService.getCustomPrice(this.basket[i].product);
+      if (!customisedItemPrice) return
+      this.allCustomisedProductPrice.push(customisedItemPrice);
+      console.log("prix custom d'un article", customisedItemPrice);
+      //console.log("Prix de l'article custom", customisedItemPrice)
+    }
+    console.log("tableau custom", this.allCustomisedProductPrice);
+  }
 
 }
