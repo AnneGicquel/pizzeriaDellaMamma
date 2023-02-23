@@ -24,6 +24,7 @@ export class BasketComponent {
   ngOnInit() {
     this.getBasket();
     this.getTableNumber();
+    console.log("mon panier", this.basket);
   }
 
   getBasket() {
