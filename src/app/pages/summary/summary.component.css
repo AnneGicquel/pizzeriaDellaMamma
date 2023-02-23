@@ -1,0 +1,33 @@
+h2 {
+    font-family: 'inter';
+    font-size: 30px;
+    font-weight: normal;
+    margin:163px 0 15px;
+}
+p{
+    color: #092947;
+}
+.bonAppetit {
+    color: #E12417;
+    font-size: 30px;
+    font-weight: bold;
+    font-style : italic;
+    
+}
+.center {
+    text-align: center;
+}
+.summary {
+    font-family: "Playfair Display";
+    font-style: italic;
+    
+    margin: 40px 80px 0px 40px;
+    font-weight: bold;
+}
+.total{
+    margin: 20px 80px 10px 80px;
+    text-align: end;
+}
+.commande {
+    cursor : pointer;
+}

@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 export class TagTypeComponent {
   products:IProduct[]=PRODUCTS;
 
-  constructor(private productService : ProductService){}
+
+  constructor(private productService : ProductService){};
 
 }
