@@ -17,6 +17,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 
 @NgModule({
@@ -35,11 +37,14 @@ import { FilterPipe } from './pipes/filter.pipe';
     BasketProductCardComponent,
     TagTypeComponent,
     FilterPipe,
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
 
   ],
   providers: [],

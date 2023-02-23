@@ -8,7 +8,7 @@ main{
 
 }
 
-button{
+a{
     /* border: 1px solid red; */
     padding: 6px 16px 6px 16px;
     border-radius: 50px;
@@ -18,12 +18,12 @@ button{
 
 
 /* toggle */
-main button:hover {
+main a:hover {
     color: white;
     background-color: var(--darkblue);
 }
 
-main button:active{
+main a:active{
     color: white;
     background-color: var(--darkblue);
 

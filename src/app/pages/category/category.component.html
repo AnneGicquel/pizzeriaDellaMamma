@@ -1,34 +1,47 @@
 <main>
-    <app-tag-type></app-tag-type>
+    <!-- <input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="search products"> -->
+
+    <!-- <app-tag-type></app-tag-type> -->
+    <section>
+        <a (click)="filter('')">all</a>
+        <a (click)="filter('tomato')">Base tomate</a>
+        <a (click)="filter('white')">Base blanche</a>
+        <a (click)="filter('veggie')">Veggie</a>
+        <a (click)="filter('dessert')">Dessert</a>
+        <a (click)="filter('drink')">Boissons</a>
+
+    </section>
+
 
     <h2>Les Pizzas della Mamma</h2>
     <div class="grid">
-        <ng-container *ngFor="let product of products">
-            <app-product-card *ngIf="product.category === 'pizza'" [product]= "product"></app-product-card>
-        </ng-container>  
+        <!-- products = productList -->
+        <!-- left :value(products) filterString|propName in pipe  -->
+        <ng-container *ngFor="let product of filterCategory | filter :searchKey:'tags'">
+            <!-- filterCategory | filter: searchKey :'title' -->
+            <app-product-card *ngIf="product.category === 'pizza'" [product]="product"></app-product-card>
+        </ng-container>
     </div>
 
     <br>
-    <br>  
+    <br>
     <br>
 
 
     <h2>Les Desserts della Mamma</h2>
     <div class="grid">
-        <ng-container *ngFor="let product of products">
-            <app-product-card *ngIf="product.category === 'dessert'" [product]= "product"></app-product-card>
+        <ng-container *ngFor="let product of filterCategory | filter :searchKey:'tags'">
+            <app-product-card *ngIf="product.category === 'dessert'" [product]="product"></app-product-card>
         </ng-container>
     </div>
     <br>
     <br>
     <br>
-    
-<h2>Les Boissons della Mamma</h2>
+
+    <h2>Les Boissons della Mamma</h2>
     <div class="grid">
-        <ng-container *ngFor="let product of products">
+        <ng-container *ngFor="let product of filterCategory | filter :searchKey:'tags'">
             <app-product-card *ngIf="product.category ==='drink'" [product]="product"></app-product-card>
         </ng-container>
     </div>
 </main>
-
-
