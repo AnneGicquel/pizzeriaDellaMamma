@@ -43,10 +43,12 @@ input[type="checkbox"] {
     margin-bottom: 0;
     position: absolute;
     right: 0;
+    transition: all 0.2s;
 }
 
 input[type="checkbox"]:checked+.round-checkbox {
     background-color: var( --darkblue);
     border: 3px var( --darkblue) solid;
+    transition: all 0.2s;
 }
 
