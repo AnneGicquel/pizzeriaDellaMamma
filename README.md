@@ -37,8 +37,24 @@ Description feature
 
 ## Création du panier et de l'envoi de la commande
 
-Description feature
+- Création des pages "/basket" et "/summary";
 
+-Création du service basket avec toutes les fonctions liées au basket :
+ * créer un panier
+ * sauvegarder le panier
+ * ajouter un produit au panier
+ * supprimer un produit du panier
+ * vider le panier
+
+- Création d'un composant "basket-product-card" pour afficher chaque article du panier avec les ingrédients inclus retirés ainsi que les extras choisis (avec leur quantité et prix associé)
+
+- Composant "basket-product-card" réutilisé dans la page "/summary" - disparition de la croix pour supprimer un article sur cette page (grâce à  "router.url.endsWith(/summary" associé à un booléan pour l'affichage conditionnel dans le HTML));
+
+- Récupération du numéro de table renseigné par l'utilisateur pour l'intégrer dans les deux pages
+
+- Bouton "Envoyer la commande en cuisine" qui accède à la page "/summary";
+
+- Bouton "Commencer une nouvelle commande" qui vide le panier et renvoie à la page "/home"
 
 ## Environnement
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
