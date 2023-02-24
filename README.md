@@ -64,6 +64,22 @@ Description feature
 
 - Bouton "Commencer une nouvelle commande" qui vide le panier et renvoie à la page "/home"
 
+
+## L’affichage des produits classés par type de produits
+
+- Création d'une page "category" pour afficher les produits classés par catégorie selon les buttons selectionné.
+
+- Affichage des produits grâce au product.service depuis le mock.
+
+- Création d'un comopenent "product-cards" pour boucler ce component sur la page "category".
+
+- Affichage des produits de chaques catégories grâce aux ng-container, *ngFor, *ngIf.
+
+- Affichage des buttons et la fonction grâce au "formGroup" 
+
+- category.ts : appeler tous les produits et filtrer les produits selon le tag, et afficher tout quand tous les buttons sont désactivé (donc pas cliqué)
+
+
 ## Environnement
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
