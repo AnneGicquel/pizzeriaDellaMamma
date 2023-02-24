@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BasketProductCardComponent } from './components/basket/basket-product-card/basket-product-card.component';
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -37,11 +40,14 @@ import { FooterComponent } from './components/footer/footer.component';
     TagTypeComponent,
     HeaderComponent,
     FooterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    
 
   ],
   providers: [],
