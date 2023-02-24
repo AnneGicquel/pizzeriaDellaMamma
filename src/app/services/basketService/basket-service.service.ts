@@ -96,7 +96,7 @@ export class BasketServiceService {
     const basket = this.getBasket();
     this.quantity = basket.length;
     return this.quantity;
-
+    
   }
 
 }

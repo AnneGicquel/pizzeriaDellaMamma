@@ -1,29 +1,38 @@
-<h1 class="benvenuto">
-    {{getTitle()}}
-</h1>
+<main class="mainTableNumberForm">
+    
+    <div class="instructionContainer">
+        <h1 class="benvenuto">
+            {{getTitle()}}
+        </h1>
 
 
-<!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
-<form [formGroup]="tableForm">
+        <!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
+        <form [formGroup]="tableForm">
 
-    <!-- for pour lier le label à l'input -->
-    <label for="table_number" class="instruction">{{getLabel()}}</label>
+            <!-- for pour lier le label à l'input -->
+            <label for="table_number" class="instruction">{{getLabel()}}</label>
     
-    
-    <div>
-        <!--attribuer un formControlName qui correspond à la clé de tableForm -->
-    
-        <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
-        <input type="text" placeholder="Exemple : 42"  class="entry-field" 
-            formControlName="table_number" [class.ifError]="validationError.includes('table_number')">
-        <p class="error-feedback" *ngIf="validationError.includes('table_number')">
+            
+            <!--attribuer un formControlName qui correspond à la clé de tableForm -->
+            <div class="inputFieldButton">
+                <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
+                <input type="text" placeholder="Exemple : 42"  class="entry-field" 
+                formControlName="table_number" [class.ifError]="validationError.includes('table_number')">
+                    
+                <button type="submit" (click)="accessToMenu()">{{getButton()}}</button>
+            </div>
+                
+                
+            
+            
+        </form>
+        
+    </div>
+    <p class="error-feedback" *ngIf="validationError.includes('table_number')">
             Numéro de table incorrecte.
         </p>
-    </div>
+    
 
-    <button type="submit" (click)="accessToMenu()">{{getButton()}}</button>
+    <a routerLink="/category" class="linkToOrder">{{getLinkToOrder()}}</a> 
 
-</form>
-
-<a routerLink="/category" class="linkToOrder">{{getLinkToOrder()}}</a>
-
+</main>

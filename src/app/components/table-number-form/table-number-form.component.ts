@@ -72,7 +72,7 @@ export class TableNumberFormComponent {
 
   getTitle() {
     const getNumberTable = this.tableFormService.getTableNumberInfo();
-    return getNumberTable !== null ? 'Table '+getNumberTable : 'Benvenuto'
+    return getNumberTable !== null ? 'Table '+getNumberTable : 'Benvenuto !'
   }
   
   
