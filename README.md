@@ -21,12 +21,40 @@ Description feature
 
 ## Customisation d’un produit
 
-Description feature
+- Affichage de l’image produit et ses attributs : au clic sur un produit de la page « category » afficher le produit demandé.
+
+- Affichage des ingrédients inclus et extras grâce à des boucles *ngFor
+
+- L’initialisation du composant créé une variable qui accueille le produit customisé, en appuyant sur le bouton « ajouter au panier », ce produit customisé est envoyé dans le localStorage (grâce à une fonction du service « basket »)
+
+- Création d’un service « customisation » avec les fonctions d’ajouts/suppression des ingrédients inclus et des extras 
+
+- Création d’un bouton « ajouter au panier » qui affiche un prix qui se met à jour en fonction des extras sélectionnés (une fonction dans le service « customisation » calcule le prix du produit customisé)
+
+- Ingrédients inclus : Avec des checkbox modifier la présence de l’ingrédient dans le produit. Modification du style de la checkbox qui se modifie selon si elle est cochée ou non.
+
+- Extras : Les extras sont mis en ordre alphabétique sans modifier le mock. Création de boutons +/- pour modifier la quantité d’ingrédients, affichage de la quantité. Modification de l’attribut « disabled » sur les boutons en fonction de la quantité.
 
 ## Création du panier et de l'envoi de la commande
 
-Description feature
+- Création des pages "/basket" et "/summary";
 
+-Création du service basket avec toutes les fonctions liées au basket :
+ * créer un panier
+ * sauvegarder le panier
+ * ajouter un produit au panier
+ * supprimer un produit du panier
+ * vider le panier
+
+- Création d'un composant "basket-product-card" pour afficher chaque article du panier avec les ingrédients inclus retirés ainsi que les extras choisis (avec leur quantité et prix associé)
+
+- Composant "basket-product-card" réutilisé dans la page "/summary" - disparition de la croix pour supprimer un article sur cette page (grâce à  "router.url.endsWith(/summary" associé à un booléan pour l'affichage conditionnel dans le HTML));
+
+- Récupération du numéro de table renseigné par l'utilisateur pour l'intégrer dans les deux pages
+
+- Bouton "Envoyer la commande en cuisine" qui accède à la page "/summary";
+
+- Bouton "Commencer une nouvelle commande" qui vide le panier et renvoie à la page "/home"
 
 ## Environnement
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.

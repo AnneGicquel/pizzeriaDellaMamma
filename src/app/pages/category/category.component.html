@@ -2,15 +2,32 @@
     <!-- <input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="search products"> -->
 
     <!-- <app-tag-type></app-tag-type> -->
-    <section>
-        <a (click)="filter('')">all</a>
+    <!-- <section>
         <a (click)="filter('tomato')">Base tomate</a>
         <a (click)="filter('white')">Base blanche</a>
         <a (click)="filter('veggie')">Veggie</a>
         <a (click)="filter('dessert')">Dessert</a>
         <a (click)="filter('drink')">Boissons</a>
+    </section> -->
 
-    </section>
+    <form [formGroup]="allCheckbox">
+        <label for="tomato">Base tomate</label>
+        <input (click)="filter('tomato')" type="checkbox" name="tomato" id="tomato" formControlName="tomato">
+
+        <label for="white">Base blanc</label>
+        <input (click)="filter('white')" type="checkbox" name="white" id="white" formControlName="white">
+
+        <label for="veggie">Veggie</label>
+        <input (click)="filter('veggie')" type="checkbox" name="veggie" id="veggie"formControlName="veggie">
+
+        <label for="dessert">Dessert</label>
+        <input (click)="filter('dessert')" type="checkbox" name="dessert" id="dessert"formControlName="dessert">
+
+        <label for="drink">Boissons</label>
+        <input (click)="filter('drink')" type="checkbox" name="drink" id="drink"formControlName="drink">
+    </form>
+
+
 
 
     <h2>Les Pizzas della Mamma</h2>

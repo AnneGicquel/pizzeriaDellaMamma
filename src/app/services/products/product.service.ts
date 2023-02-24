@@ -15,8 +15,6 @@ export class ProductService {
 
   getProducts():IProduct[]{
     return PRODUCTS;
-    // .pipe(map((res:any)=>
-    // return:res;
   }
 
   getProduct(id: number) : IProduct | undefined {
