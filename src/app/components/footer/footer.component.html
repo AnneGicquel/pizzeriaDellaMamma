@@ -1,12 +1,5 @@
 <footer>
-    <p *ngIf="this.router.url.endsWith('/basket')">Buon Appetito !</p>
-</footer>
+    <p *ngIf="! router.url.endsWith('/summary') && ! router.url.endsWith('/')">Buon Appetito!</p>
+  </footer>
 
-<!--  *ngIf="this.isParagraphVisible" hideFooter() -->
-<!-- && this.router.url.endsWith('/category')  -->
-
-<!-- pour le header -->
-
-
-<!-- sur la div de button  *ngIf='getNumberTable !== null'-->
-<!-- en ayant importer le service et la fonction getNumberTable -->
+ 

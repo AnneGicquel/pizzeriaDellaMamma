@@ -10,19 +10,6 @@ export class FooterComponent {
 
   constructor(public router: Router,){}
 
-  // // initialisation à true
-  // isParagraphVisible: boolean = true;
-
-  // hideFooter(){
-  //   if (this.router.url.endsWith("/basket")) {
-  //     this.isParagraphVisible = false;
-  // }
-
-
-  // hideFooter(){
-  //   const getUrlBasket = this.router.url.endsWith("/basket");
-  //   return getUrlBasket? 'test1':'sos'
-  // }
 
 }
 

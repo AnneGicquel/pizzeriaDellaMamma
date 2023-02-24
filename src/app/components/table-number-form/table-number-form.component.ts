@@ -91,8 +91,6 @@ export class TableNumberFormComponent {
     return getNumberTable !== null ? 'Revenir à la commande':''
   }
 
-  // + display navbar!!
-
 }
   
   
