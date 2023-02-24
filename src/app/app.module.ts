@@ -18,7 +18,6 @@ import { BasketProductCardComponent } from './components/basket/basket-product-c
 import { TagTypeComponent } from './components/tag-type/tag-type.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { Subscription } from 'rxjs/internal/Subscription';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
