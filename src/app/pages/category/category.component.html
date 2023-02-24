@@ -11,20 +11,20 @@
     </section> -->
 
     <form [formGroup]="allCheckbox">
+        <input (change)="filterAll()" type="checkbox" name="tomato" id="tomato" formControlName="tomato">
         <label for="tomato">Base tomate</label>
-        <input (click)="filter('tomato')" type="checkbox" name="tomato" id="tomato" formControlName="tomato">
 
+        <input (change)="filterAll()"type="checkbox" name="white" id="white" formControlName="white">
         <label for="white">Base blanc</label>
-        <input (click)="filter('white')" type="checkbox" name="white" id="white" formControlName="white">
 
+        <input (change)="filterAll()" type="checkbox" name="veggie" id="veggie"formControlName="veggie">
         <label for="veggie">Veggie</label>
-        <input (click)="filter('veggie')" type="checkbox" name="veggie" id="veggie"formControlName="veggie">
 
+        <input (change)="filterAll()" type="checkbox" name="dessert" id="dessert"formControlName="dessert">
         <label for="dessert">Dessert</label>
-        <input (click)="filter('dessert')" type="checkbox" name="dessert" id="dessert"formControlName="dessert">
 
+        <input (change)="filterAll()"type="checkbox" name="drink" id="drink"formControlName="drink">
         <label for="drink">Boissons</label>
-        <input (click)="filter('drink')" type="checkbox" name="drink" id="drink"formControlName="drink">
     </form>
 
 
