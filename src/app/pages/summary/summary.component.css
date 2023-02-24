@@ -2,7 +2,7 @@ h2 {
     font-family: 'inter';
     font-size: 30px;
     font-weight: normal;
-    margin:163px 0 15px;
+    margin:100px 0 15px;
 }
 p{
     color: #092947;
@@ -17,7 +17,15 @@ p{
 .center {
     text-align: center;
 }
-.summary {
+.container{
+min-height: 100vh;
+display:flex;
+flex-direction:column;
+justify-content: center;
+
+
+
+}.summary {
     font-family: "Playfair Display";
     font-style: italic;
     
@@ -30,4 +38,6 @@ p{
 }
 .commande {
     cursor : pointer;
+    align-self: center;
+    margin-top: 50px;
 }

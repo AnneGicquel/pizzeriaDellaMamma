@@ -87,7 +87,7 @@ export class BasketServiceService {
   }
 
   resetBasket() {
-    localStorage.clear();
+    localStorage.removeItem('basket');
     this.getBasket();
   }
 
