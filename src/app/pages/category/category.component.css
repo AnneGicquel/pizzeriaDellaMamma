@@ -19,3 +19,36 @@ h2{
     font-style: italic;
 }
 
+/* toggle */
+
+
+section{
+    display: flex;
+    padding: 64px 0 38px 0;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    gap: 16px;
+
+
+}
+
+a{
+    /* border: 1px solid red; */
+    padding: 6px 16px 6px 16px;
+    border-radius: 50px;
+    background-color: white;
+    
+}
+
+
+/* toggle */
+main a:hover {
+    color: white;
+    background-color: var(--darkblue);
+}
+
+main a:active{
+    color: white;
+    background-color: var(--darkblue);
+
+}

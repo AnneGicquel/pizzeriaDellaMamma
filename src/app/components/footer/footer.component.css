@@ -1,0 +1,17 @@
+/* Buon Appetito ! */
+footer{
+/* border: 2px solid red; */
+display: flex;
+align-items: center;
+justify-content: center;
+height: 170px;
+width: 100%;
+font-family: var(--playfair);
+font-style: italic;
+font-weight: 700;
+font-size: 20px;
+line-height: 27px;
+color: var(--red);
+}
+
+
