@@ -25,7 +25,14 @@ Les dimensions des tablettes seront fixées à 960px par 1494px, le site n'est d
 
 ## Affichage des produits classés par type de produits
 
-Description feature
+- Affichage des produits par category grâce à la page category avec ng-container, *ngIf, *ngFor.
+
+- Affichage et fonctions des buttons grâce au "form"
+
+- Appelation de tous les produits de mock grâce au service product.
+
+- Filtrer les produits à l'aide des fonctions dans category.ts et custom pipe.
+
 
 ## Customisation d’un produit
 
