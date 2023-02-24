@@ -15,6 +15,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class CategoryComponent {
   products: IProduct[] = [];
   allCheckbox!: FormGroup;
+  tagsFormArray: Array<any> = [];
+
 
   tags: TagType[] = ["tomato", "white", "drink", "veggie", "dessert"];
   veggie = ["veggie"]
@@ -24,7 +26,6 @@ export class CategoryComponent {
   public searchTerm: string = '';
 
   constructor(private productService: ProductService, private formBuilder: FormBuilder) { }
-
   ngOnInit(): void {
     this.products = this.getProducts();
     this.filterCategory = this.getProducts();
@@ -44,13 +45,34 @@ export class CategoryComponent {
 
   }
 
-  filter(tags: string) {
-    this.filterCategory = this.products.filter((a: any) => {
-      if (a.tags.includes(tags) || tags == '') {
-        return a;
+  filterAll() {
+    const allTags = this.getTags();
+    this.filter(allTags);
+  }
+
+  getTags() {
+    let allTags = [];
+    const checkboxValues = this.allCheckbox.value;
+    for (let key in checkboxValues) {
+      if (checkboxValues.hasOwnProperty(key) && checkboxValues[key] === true) {
+        allTags.push(key);
       }
-    })
-    let isChecked = this.allCheckbox.value;
-    console.log(isChecked);
+    }
+    console.log(allTags);
+
+    return allTags;
+  }
+
+  filter(tags: string[]) {
+    this.filterCategory = this.products.filter((product: any) => {
+      // Vérifier si le produit a au moins un des tags de l'array tags
+      return tags.some((tag: string) => product.tags.includes(tag));
+    });
+
+    if (tags.length === 0) {
+      this.filterCategory = this.products;
+    }
+
   }
 }
+
