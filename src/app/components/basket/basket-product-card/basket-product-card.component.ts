@@ -20,6 +20,8 @@ export class BasketProductCardComponent {
 
   //propriété pour afficher le bouton supprimer un produit
   isButtonVisible: boolean = true;
+  ingredientsExclus: boolean = false;
+  extraInclus: boolean = false;
 
   constructor(
     private basketService: BasketServiceService,
@@ -54,9 +56,11 @@ export class BasketProductCardComponent {
   getPriceProductCustom() {
     for (let i = 0; i < this.basket.length; i++) {
       console.log("prix clara", this.basket[i].customPrice);
-      
-     
+
+    }
+
+
   }
 
-}
+ 
 }

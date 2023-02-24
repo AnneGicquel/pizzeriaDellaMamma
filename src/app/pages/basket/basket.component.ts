@@ -39,7 +39,7 @@ export class BasketComponent {
   resetBasket() {
     this.basketService.resetBasket();
     this.getBasket();
-    // this.isVisibleBasket = false;
+  
   }
   
   // Fonction pour récupérer le numéro de table
@@ -48,11 +48,4 @@ export class BasketComponent {
     return tableNumber;
     console.log('table', tableNumber);
   }
-  // displayIcons() {
-  //   if (this.router.url.endsWith("/summary")) {
-  //     this.isVisibleBasket = false;
-  //   }
-  //   console.log("icone basket après", this.isVisibleBasket);
-  // }
-
 }

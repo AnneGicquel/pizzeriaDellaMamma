@@ -1,12 +1,17 @@
-<h2 class="center">Votre commande a bien été envoyée en cuisine !</h2>
+<div class="container">
 
-<p class="bonAppetit center">Buon Appetito!</p>
+    <div>
 
-<p class="summary">Commande table {{ getTableNumber()}}</p>
+        <h2 class="center">Votre commande a bien été envoyée en cuisine !</h2>
 
-<app-basket-product-card></app-basket-product-card>
-<p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice/100| number :'1.2-2' }}  €</p>
+        <p class="bonAppetit center">Buon Appetito!</p>
+        <p class="summary">Commande table {{ getTableNumber()}}</p>
 
+        <app-basket-product-card></app-basket-product-card>
+        <p class="total"><b>Total</b>: {{ this.basketService.basketTotalPrice/100| number :'1.2-2' }} €</p>
+        
+    </div>
+    
+    <p class="commande center" (click)="resetBasket()" routerLink="">COMMENCER UNE NOUVELLE COMMANDE</p>
 
-<p class="commande center" (click)="resetBasket()" routerLink="">COMMENCER UNE NOUVELLE COMMANDE</p>
-
+</div>
