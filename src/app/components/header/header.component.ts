@@ -23,7 +23,6 @@ export class HeaderComponent {
   ngOnInit() {
     this.basketService.getBasket();
     this.getQuantityBasket();
-    // this.displayIcons();
   }
 
 
