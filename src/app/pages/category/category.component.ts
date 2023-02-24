@@ -15,46 +15,36 @@ export class CategoryComponent {
   products : IProduct[]=[];
   
   tags:TagType[] = ["tomato" , "white" , "drink" , "veggie" , "dessert"];
+  veggie = this.tags.includes('tomato') 
   searchKey:string="";
   // public filterTags:any;
-  public filterCategory:any;
+  public filterCategory : IProduct[]=[];
   public searchTerm :string='';
 
   constructor(private productService : ProductService){}
 
   ngOnInit() : void{
     this.products = this.getProducts(); 
-    // this.tags = this.filterCategory;
-    // .subscribe((res:any)=>{
-    //   this.products = res;
-
-    //   this.products.forEach((a:any)=>{
-    //     Object.assign(a,{quantity:1, total:a.price});
-    //   })
-    // })
-
+    this.filterCategory = this.getProducts(); 
+    console.log(this.products)
   }
 
   getProducts(){
     return this.productService.getProducts();
 
   }
-
-
   filter(tags:string){
     this.filterCategory =this.products.filter((a:any)=>{
       if(a.tags == tags || tags ==''){
         return a;
       }
+      if(a.tags.includes("veggie")){
+        
+      }
     })
-
   }
-
-  // search(event:any){
-  //   this.searchTerm= (event.target as HTMLInputElement).value;
-  //   console.log(this.searchTerm);
-  //   this.productService.search.next(this.searchTerm);
-  // }
-
-
 }
+
+// if(a.tags.includes("veggie")){
+//   return a;
+// }
