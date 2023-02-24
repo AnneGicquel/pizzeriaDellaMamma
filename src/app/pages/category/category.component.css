@@ -22,7 +22,7 @@ h2{
 /* toggle */
 
 
-section{
+form{
     display: flex;
     padding: 64px 0 38px 0;
     font-family: 'Inter', sans-serif;
@@ -52,3 +52,14 @@ label a:active{
     background-color: var(--darkblue);
 
 }
+
+
+input{
+    opacity: 0;
+}
+
+input[type ="checkbox"]:checked + label {
+    background-color: var(--darkblue);
+    color: white;
+}
+
