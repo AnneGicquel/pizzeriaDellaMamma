@@ -32,7 +32,7 @@ section{
 
 }
 
-a{
+label, input{
     /* border: 1px solid red; */
     padding: 6px 16px 6px 16px;
     border-radius: 50px;
@@ -42,12 +42,12 @@ a{
 
 
 /* toggle */
-main a:hover {
+label a:hover {
     color: white;
     background-color: var(--darkblue);
 }
 
-main a:active{
+label a:active{
     color: white;
     background-color: var(--darkblue);
 
