@@ -91,13 +91,6 @@ export class BasketServiceService {
     this.getQuantityBasket();
   }
 
-  //fonction pour récuperer le nombre d'articles dans mon panier
-  getQuantityBasket() {
-    const basket = this.getBasket();
-    this.quantity = basket.length;
-    return this.quantity;
-  }
-
     //fonction pour récuperer le nombre d'articles dans mon panier
     getQuantityBasket() {
       const basket = this.getBasket();
