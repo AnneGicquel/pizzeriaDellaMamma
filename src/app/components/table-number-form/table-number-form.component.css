@@ -1,24 +1,56 @@
+h1{
+    
+    text-align: center;
+}
+
+.mainTableNumberForm{
+
+    height: 1360px;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.instructionContainer{
+
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    
+}
+
+
+form{
+    
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.inputFieldButton{
+
+    display: flex;
+    align-content: center;
+
+}
+
 .benvenuto{
-    position: absolute;
-    width: 271px;
-    height: 67px;
-    left: 352px;
-    top: 612px;
+
     font-family: var(--playfair);
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
     line-height: 67px;
-    /* identical to box height */
     color: var(--red);
 }
 
 .instruction{
-    position: absolute;
-    width: 589px;
-    height: 36px;
-    left: 194px;
-    top: 702px;
+
     font-family:var(--inter);
     font-style: normal;
     font-weight: 400;
@@ -29,13 +61,12 @@
 }
 
 .entry-field{
-    position: absolute;
+
     width: 389px;
     height: 67px;
-    left: 177px;
-    top: 814px;
     background: #FFFFFF;
     border-radius: 10px;
+    border-color: white; 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -43,15 +74,15 @@
     line-height: 24px;
     padding-left: 25px;
     margin-right: 22px;
-    /* text-align: center; */
+    /* retire la bordure qui s'affiche au click de la saisie */
+    outline: none;
 }
 
+
 button{
-    position: absolute;
+
     width: 195px;
     height: 67px;
-    left: 588px;
-    top: 814px;
     font-family: var(--inter);
     font-style: normal;
     font-weight: 700;
@@ -59,44 +90,38 @@ button{
     line-height: 19px;
     text-align: center;
     color: #FFFFFF;
+    border-radius: 10px;
     background-color: var(--darkblue);
 }
 
 
 /* change la color du placeholder */
 ::placeholder { 
+
     color: #D9D9D9;;
-  }
+}
 
 
 /* feedback si erreur de saisie du champ */
 .ifError{
-    border-color: red;
+
+    border-color: var(--red); 
 } 
 
 .error-feedback{
-  position: absolute;
-  width: 265px;
-  height: 24px;
-  left: 177px;
-  top: 893px;
   
   font-family: var(--inter);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  
   color: var(--red);
-} 
 
+} 
 
 /* Revenir à la commande */
 .linkToOrder{
-    position: absolute;
-    width: 176px;
-    height: 19px;
-    top: 950px;
+    
     font-family: var(--inter);
     font-style: normal;
     font-weight: 400;
@@ -107,3 +132,11 @@ button{
     color: var(--darkblue);
 
 }
+
+a{
+    height: 170px;
+    width: 100%;
+    text-align: center;
+    position: fixed; 
+    /* bottom: 50px;  */
+} 
