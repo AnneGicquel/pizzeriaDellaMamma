@@ -36,6 +36,7 @@ export class BasketServiceService {
   private saveBasket(basket: IBasketProduct[]) {
     localStorage.setItem('basket', JSON.stringify(basket));
     this.getBasketTotalPrice();
+    this.getQuantityBasket();
   }
 
   // Methode pour récupérer le panier et le créer si il n'existe pas
@@ -59,7 +60,7 @@ export class BasketServiceService {
     // on ajoute le produit dans le panier
     basket.push(basketProduct);
     //recuperer la quantite
-    this.quantity = this.quantity + 1;
+    this.getQuantityBasket();
     //je sauvegarde mon panier
     this.saveBasket(basket);
   }
@@ -80,7 +81,6 @@ export class BasketServiceService {
     // je retire l'élément de mon panier
     basket.splice(index, 1);
     this.getBasketTotalPrice();
-    this.quantity = this.quantity - 1;
     this.saveBasket(basket);
 
   }
@@ -88,7 +88,16 @@ export class BasketServiceService {
   resetBasket() {
     localStorage.removeItem('basket');
     this.getBasket();
+    this.getQuantityBasket();
+
   }
 
+    //fonction pour récuperer le nombre d'articles dans mon panier
+    getQuantityBasket() {
+      const basket = this.getBasket();
+      this.quantity = basket.length;
+      return this.quantity;
+      
+    }
 
 }
