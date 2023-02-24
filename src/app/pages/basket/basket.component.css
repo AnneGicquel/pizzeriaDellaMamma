@@ -1,4 +1,6 @@
-
+a, p, button {
+    font-family: var(--inter);
+}
 a {
     text-align: end;
     margin: 0 80px 10px 80px;
@@ -37,6 +39,7 @@ h2{
     cursor: pointer;
     color :#092947; 
     text-align:start;
+    font-family: var(--inter);
 }
 .reset {
     text-decoration: underline;
@@ -52,4 +55,5 @@ h2{
 
 .emptyBasket{
     margin: 80px 80px 20px;
+    font-family: var(--inter);
 }

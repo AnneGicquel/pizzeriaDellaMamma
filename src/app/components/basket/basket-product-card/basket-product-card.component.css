@@ -16,6 +16,9 @@ p {
     font-size: 16px;
     color: #092947;
 }
+p, span {
+    font-family: var(--inter);
+}
 main {
     display: flex;
     flex-direction: column; 

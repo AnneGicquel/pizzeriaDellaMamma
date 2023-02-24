@@ -35,7 +35,7 @@ export class BasketProductCardComponent {
 
   getBasket() {
     this.basket = this.basketService.getBasket();
-    this.getPriceProductCustom();
+    //this.getPriceProductCustom();
   }
 
   removeProduct(index: number) {
@@ -53,14 +53,14 @@ export class BasketProductCardComponent {
   }
 
   // Fonction qui rempli un tableau avec les prix custom des pizza
-  getPriceProductCustom() {
-    for (let i = 0; i < this.basket.length; i++) {
-      console.log("prix clara", this.basket[i].customPrice);
+  // getPriceProductCustom() {
+  //   for (let i = 0; i < this.basket.length; i++) {
+  //    // console.log("prix clara", this.basket[i].customPrice);
 
-    }
+  //   }
 
 
-  }
+  // }
 
  
 }
