@@ -2,12 +2,12 @@
     <h1>Pizzeria Della Mamma</h1>
 
 
-    <nav>
+    <nav *ngIf='getNumberTable() !== null'>
 
         <!-- Numéro de table -->
-        <p class="white-background">Table XX</p>
+        <a class="white-background"routerLink="/" >Table {{getNumberTable()}}</a>
 
-        <a *ngIf="this.isVisibleBasket" class="white-background" routerLink="/basket">
+        <a *ngIf="!router.url.endsWith('/summary')" class="white-background" routerLink="/basket">
             <!-- icone panier -->
             <svg viewBox="0 0 48 48" width="20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -17,7 +17,7 @@
             {{ this.basketService.quantity }} </a>
 
         <!-- icone ticket de caisse - commande -->
-        <a  *ngIf="!this.isVisibleBasket"  class="white-background" routerLink="/summary"><svg enable-background="new 0 0 48 48" height="20px" version="1.1" viewBox="0 0 48 48"
+        <a  *ngIf="router.url.endsWith('/summary')"  class="white-background" routerLink="/summary"><svg enable-background="new 0 0 48 48" height="20px" version="1.1" viewBox="0 0 48 48"
                 xml:space="preserve">
                 <g id="Expanded">
                     <g>
@@ -63,3 +63,4 @@
             </svg></a>
     </nav>
 </header>
+

@@ -12,7 +12,7 @@ import { TableFormServiceService } from 'src/app/services/tableFormService/table
 export class BasketComponent {
 
   basket : IBasketProduct[] = [];
-  //isVisibleBasket: boolean = true;
+  isVisibleBasket: boolean = true;
   
 
   constructor (
@@ -39,6 +39,7 @@ export class BasketComponent {
   resetBasket() {
     this.basketService.resetBasket();
     this.getBasket();
+    // this.isVisibleBasket = false;
   }
   
   // Fonction pour récupérer le numéro de table

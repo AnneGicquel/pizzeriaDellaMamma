@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasketServiceService, IBasketProduct } from 'src/app/services/basketService/basket-service.service';
+import { TableFormServiceService } from 'src/app/services/tableFormService/table-form-service.service';
 
 @Component({
   selector: 'app-header',
@@ -10,32 +11,30 @@ import { BasketServiceService, IBasketProduct } from 'src/app/services/basketSer
 export class HeaderComponent {
 
   basket : IBasketProduct[] = [];
-  isVisibleBasket: boolean = true;
- 
   
 
   constructor (
     public basketService : BasketServiceService,
-    public router : Router
+    public router : Router,
+    public tableFormService: TableFormServiceService
+    
     ) {}
 
   ngOnInit() {
     this.basketService.getBasket();
     this.getQuantityBasket();
-    this.displayIcons();
+    // this.displayIcons();
   }
 
 
   getQuantityBasket() {
     this.basketService.getQuantityBasket();
   }
-
-  displayIcons() {
-    if (this.router.url.endsWith("/summary")) {
-      this.isVisibleBasket = false;
-    }
-    console.log("icone basket après", this.isVisibleBasket);
-  }
-
   
+
+  getNumberTable(){
+    const getNumberTable = this.tableFormService.getTableNumberInfo();
+    return getNumberTable
+}
+
 }

@@ -20,6 +20,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { HeaderComponent } from './components/header/header.component';
     BasketProductCardComponent,
     TagTypeComponent,
     HeaderComponent,
+    FooterComponent,
     FilterPipe
   ],
   imports: [
