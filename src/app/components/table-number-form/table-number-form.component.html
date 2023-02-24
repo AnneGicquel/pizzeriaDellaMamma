@@ -26,11 +26,11 @@
             
             
         </form>
-        
-    </div>
-    <p class="error-feedback" *ngIf="validationError.includes('table_number')">
+        <p class="error-feedback" *ngIf="validationError.includes('table_number')">
             Numéro de table incorrecte.
         </p>
+    </div>
+    
     
 
     <a routerLink="/category" class="linkToOrder">{{getLinkToOrder()}}</a> 
