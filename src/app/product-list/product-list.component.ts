@@ -9,8 +9,8 @@ import { PRODUCTS, TagType } from '../mocks/products';
 export class ProductListComponent {
   //  tags:TagType[] = ["tomato" , "white" , "drink" , "veggie" , "dessert"];
 
-  // //  objet, filtrer , passer ses donnees dans un tableau.
-  // // mon New Data (dans)
+  //  objet, filtrer , passer ses donnees dans un tableau.
+  // mon New Data (dans)
   //  getProducts(tags:TagType) {
   //   if(this.tags.length === 1){
   //     return PRODUCTS;
@@ -19,7 +19,7 @@ export class ProductListComponent {
   //       return
   //     })
   //   }
-  //  }
+  // //  }
 
 
 }
