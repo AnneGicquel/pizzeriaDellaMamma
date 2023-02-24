@@ -66,7 +66,8 @@ export class ProductDetailsComponent {
       return 
     }
     const basketProduct: IBasketProduct = {
-      product: this.product
+      product: this.product,
+      customPrice: this.customPrice!
     }
     this.basketService.addToBasket(basketProduct);
   }
