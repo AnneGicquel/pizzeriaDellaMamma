@@ -15,7 +15,6 @@ export class AppComponent {
   ngOnInit() {
     this.basketService.getBasket();
     this.basketService.getBasketTotalPrice();
-    this.basketService.getQuantityBasket();
   }
 
 }

@@ -5,6 +5,11 @@
     min-height: 100vh;
 }
 
+.header{
+    align-self: flex-start;
+}
+
+
 .footer {
     align-self: flex-end;
     width: 100vw;

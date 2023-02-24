@@ -13,7 +13,15 @@ Les dimensions des tablettes seront fixées à 960px par 1494px, le site n'est d
 
 ## Sélection et modification du numéro de table
 
-Description feature
+- affichage du formulaire où les client·e·s doivent renseigner leur numéro de table.
+- - si le numéro renseigné est entre 1 et 14,le·la client·e est redirigé·e vers la page category. 
+- - si quelque chose de différent est renseigné un message/feedback et une bordure de champs de saisie en rouge signale l'erreur de saisie.
+
+- affichage modifié si on accède à la page home depuis la page basket ou par le bouton de la navbar
+- - la page est personnalisée avec le numéro de table. 
+- - Le champ de saisie permet désormais de modifier le numéro de table 
+- - un lien de retour, menant à la page category s’affiche 
+- - la navbar est désormais présente afin de permettre la navigation aux client·e·s.
 
 ## Affichage des produits classés par type de produits
 

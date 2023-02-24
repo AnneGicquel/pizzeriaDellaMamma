@@ -10,7 +10,7 @@ import { TableFormServiceService } from 'src/app/services/tableFormService/table
 })
 export class HeaderComponent {
 
-  basket : IBasketProduct[] = [];
+  //basket : IBasketProduct[] = [];
   
 
   constructor (
@@ -20,15 +20,15 @@ export class HeaderComponent {
     
     ) {}
 
-  ngOnInit() {
-    this.basketService.getBasket();
-    this.getQuantityBasket();
-  }
+  // ngOnInit() {
+  //   this.basketService.getBasket();
+  //   this.getQuantityBasket();
+  // }
 
 
-  getQuantityBasket() {
-    this.basketService.getQuantityBasket();
-  }
+  // getQuantityBasket() {
+  //   this.basketService.getQuantityBasket();
+  // }
   
 
   getNumberTable(){
