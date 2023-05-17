@@ -1,5 +1,7 @@
 # Pizzeria Della Mamma 🍕
 
+![pizzeria della mamma](https://github.com/AnneGicquel/pizzeriaDellaMamma/assets/101406252/a3f2a624-aaab-4ca0-9e5d-fa0dcc66a655)
+
 La chaîne de restaurants Pizzeria Della Mamma souhaite automatiser la prise de commande en restaurant. Pour cela, chaque tablée se verra attribuer une tablette au moment de s’installer. Les clients pourront alors customiser leurs pizzas, créer leur commande, et l’envoyer en cuisine directement.
 
 Les dimensions des tablettes seront fixées à 960px par 1494px, le site n'est donc pas responsive.
